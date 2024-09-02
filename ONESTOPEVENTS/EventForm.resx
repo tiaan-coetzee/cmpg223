@@ -191,18 +191,153 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="checkedListBox2.Items" xml:space="preserve">
+    <value>test</value>
+  </data>
+  <data name="checkedListBox2.Items1" xml:space="preserve">
+    <value>test1</value>
+  </data>
+  <data name="checkedListBox2.Items2" xml:space="preserve">
+    <value>test2</value>
+  </data>
+  <data name="checkedListBox2.Items3" xml:space="preserve">
+    <value>test3</value>
+  </data>
+  <data name="checkedListBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 183</value>
+  </data>
+  <data name="checkedListBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 30</value>
+  </data>
+  <data name="checkedListBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox2.Name" xml:space="preserve">
+    <value>checkedListBox2</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox2.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txbEventCostUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 287</value>
+  </data>
+  <data name="txbEventCostUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 31</value>
+  </data>
+  <data name="txbEventCostUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;txbEventCostUpdate.Name" xml:space="preserve">
+    <value>txbEventCostUpdate</value>
+  </data>
+  <data name="&gt;&gt;txbEventCostUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txbEventCostUpdate.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;txbEventCostUpdate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txbEventNameUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 235</value>
+  </data>
+  <data name="txbEventNameUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 31</value>
+  </data>
+  <data name="txbEventNameUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;txbEventNameUpdate.Name" xml:space="preserve">
+    <value>txbEventNameUpdate</value>
+  </data>
+  <data name="&gt;&gt;txbEventNameUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txbEventNameUpdate.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;txbEventNameUpdate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label19.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 295</value>
+  </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 23</value>
+  </data>
+  <data name="label19.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Event cost:</value>
+  </data>
+  <data name="&gt;&gt;label19.Name" xml:space="preserve">
+    <value>label19</value>
+  </data>
+  <data name="&gt;&gt;label19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label20.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 243</value>
+  </data>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 23</value>
+  </data>
+  <data name="label20.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Event name:</value>
+  </data>
+  <data name="&gt;&gt;label20.Name" xml:space="preserve">
+    <value>label20</value>
+  </data>
+  <data name="&gt;&gt;label20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 14.25pt</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 252</value>
+    <value>28, 190</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 23</value>
@@ -224,16 +359,16 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="cbxPartnerSelectedUpdate.Items" xml:space="preserve">
     <value>test</value>
   </data>
   <data name="cbxPartnerSelectedUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 277</value>
+    <value>160, 187</value>
   </data>
   <data name="cbxPartnerSelectedUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 31</value>
+    <value>150, 31</value>
   </data>
   <data name="cbxPartnerSelectedUpdate.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -248,7 +383,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;cbxPartnerSelectedUpdate.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -260,7 +395,7 @@
     <value>NoControl</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 173</value>
+    <value>28, 137</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -282,13 +417,13 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="cbxClientSelectedUpdate.Items" xml:space="preserve">
     <value>test</value>
   </data>
   <data name="cbxClientSelectedUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 198</value>
+    <value>360, 137</value>
   </data>
   <data name="cbxClientSelectedUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 31</value>
@@ -306,7 +441,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;cbxClientSelectedUpdate.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>8</value>
   </data>
   <data name="cbxUpdateEvent.Items" xml:space="preserve">
     <value>test</value>
@@ -330,7 +465,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;cbxUpdateEvent.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -339,7 +474,7 @@
     <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>668, 137</value>
+    <value>637, 214</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 23</value>
@@ -360,13 +495,13 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 31</value>
+    <value>28, 31</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 23</value>
@@ -387,13 +522,13 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="monthCalendar2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="monthCalendar2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>675, 173</value>
+    <value>644, 250</value>
   </data>
   <data name="monthCalendar2.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -408,13 +543,13 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;monthCalendar2.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>12</value>
   </data>
   <data name="LBLDisp2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="LBLDisp2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 352</value>
+    <value>530, 431</value>
   </data>
   <data name="LBLDisp2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -438,7 +573,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;LBLDisp2.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>13</value>
   </data>
   <data name="btnUpdateEvent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -468,7 +603,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;btnUpdateEvent.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>14</value>
   </data>
   <data name="btnCancel3.Location" type="System.Drawing.Point, System.Drawing">
     <value>727, 417</value>
@@ -495,7 +630,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;btnCancel3.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>15</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -504,7 +639,7 @@
     <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 352</value>
+    <value>312, 431</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 23</value>
@@ -525,13 +660,13 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>16</value>
   </data>
   <data name="richTextBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 173</value>
+    <value>629, 39</value>
   </data>
   <data name="richTextBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 162</value>
+    <value>273, 162</value>
   </data>
   <data name="richTextBox2.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -549,7 +684,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;richTextBox2.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>17</value>
   </data>
   <data name="cbxUpdateEvent_Venue.Items" xml:space="preserve">
     <value>test</value>
@@ -573,7 +708,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;cbxUpdateEvent_Venue.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>18</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -582,7 +717,7 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 137</value>
+    <value>675, 13</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 23</value>
@@ -603,7 +738,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>19</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -612,7 +747,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 85</value>
+    <value>28, 85</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 23</value>
@@ -633,7 +768,7 @@
     <value>tabPage3</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>20</value>
   </data>
   <data name="tabPage3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 14.25pt</value>
@@ -668,6 +803,138 @@
   <data name="tabPage2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="checkedListBox1.Items" xml:space="preserve">
+    <value>test</value>
+  </data>
+  <data name="checkedListBox1.Items1" xml:space="preserve">
+    <value>test1</value>
+  </data>
+  <data name="checkedListBox1.Items2" xml:space="preserve">
+    <value>test2</value>
+  </data>
+  <data name="checkedListBox1.Items3" xml:space="preserve">
+    <value>test3</value>
+  </data>
+  <data name="checkedListBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 144</value>
+  </data>
+  <data name="checkedListBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 30</value>
+  </data>
+  <data name="checkedListBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox1.Name" xml:space="preserve">
+    <value>checkedListBox1</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox1.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;checkedListBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txbEventCostBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 247</value>
+  </data>
+  <data name="txbEventCostBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 31</value>
+  </data>
+  <data name="txbEventCostBook.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;txbEventCostBook.Name" xml:space="preserve">
+    <value>txbEventCostBook</value>
+  </data>
+  <data name="&gt;&gt;txbEventCostBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txbEventCostBook.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;txbEventCostBook.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txbEventNameBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 195</value>
+  </data>
+  <data name="txbEventNameBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 31</value>
+  </data>
+  <data name="txbEventNameBook.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;txbEventNameBook.Name" xml:space="preserve">
+    <value>txbEventNameBook</value>
+  </data>
+  <data name="&gt;&gt;txbEventNameBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txbEventNameBook.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;txbEventNameBook.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label18.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 255</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 23</value>
+  </data>
+  <data name="label18.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Event cost:</value>
+  </data>
+  <data name="&gt;&gt;label18.Name" xml:space="preserve">
+    <value>label18</value>
+  </data>
+  <data name="&gt;&gt;label18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 203</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 23</value>
+  </data>
+  <data name="label17.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Event name:</value>
+  </data>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
+  </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -678,7 +945,7 @@
     <value>NoControl</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>477, 207</value>
+    <value>28, 151</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 23</value>
@@ -700,31 +967,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbxPartnerSelectedBook.Items" xml:space="preserve">
-    <value>test</value>
-  </data>
-  <data name="cbxPartnerSelectedBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>415, 232</value>
-  </data>
-  <data name="cbxPartnerSelectedBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 31</value>
-  </data>
-  <data name="cbxPartnerSelectedBook.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;cbxPartnerSelectedBook.Name" xml:space="preserve">
-    <value>cbxPartnerSelectedBook</value>
-  </data>
-  <data name="&gt;&gt;cbxPartnerSelectedBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbxPartnerSelectedBook.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;cbxPartnerSelectedBook.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -736,7 +979,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>477, 128</value>
+    <value>28, 99</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 23</value>
@@ -758,13 +1001,13 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="cbxClientSelectedBook.Items" xml:space="preserve">
     <value>test</value>
   </data>
   <data name="cbxClientSelectedBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>415, 153</value>
+    <value>360, 91</value>
   </data>
   <data name="cbxClientSelectedBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 31</value>
@@ -782,7 +1025,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;cbxClientSelectedBook.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="btnBookEvent.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 14.25pt</value>
@@ -815,7 +1058,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;btnBookEvent.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="btnCancel2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 14.25pt</value>
@@ -848,7 +1091,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;btnCancel2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="lblDispCost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -860,7 +1103,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblDispCost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 328</value>
+    <value>590, 363</value>
   </data>
   <data name="lblDispCost.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 23</value>
@@ -884,7 +1127,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;lblDispCost.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -896,7 +1139,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 328</value>
+    <value>298, 363</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 23</value>
@@ -920,13 +1163,13 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="RTBEventDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 128</value>
+    <value>652, 47</value>
   </data>
   <data name="RTBEventDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 181</value>
+    <value>252, 149</value>
   </data>
   <data name="RTBEventDescription.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -944,7 +1187,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;RTBEventDescription.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -956,7 +1199,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 88</value>
+    <value>628, 18</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>305, 23</value>
@@ -977,13 +1220,13 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="cbxAddEventVenue.Items" xml:space="preserve">
     <value>test</value>
   </data>
   <data name="cbxAddEventVenue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 39</value>
+    <value>360, 44</value>
   </data>
   <data name="cbxAddEventVenue.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 31</value>
@@ -1001,13 +1244,13 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;cbxAddEventVenue.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>14</value>
   </data>
   <data name="monthCalendar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="monthCalendar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>675, 128</value>
+    <value>655, 242</value>
   </data>
   <data name="monthCalendar1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1022,7 +1265,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;monthCalendar1.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>15</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1034,7 +1277,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>671, 88</value>
+    <value>648, 210</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 23</value>
@@ -1056,7 +1299,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>16</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1068,7 +1311,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 42</value>
+    <value>28, 47</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 23</value>
@@ -1089,7 +1332,7 @@
     <value>tabPage2</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>17</value>
   </data>
   <data name="tabPage2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 14.25pt</value>

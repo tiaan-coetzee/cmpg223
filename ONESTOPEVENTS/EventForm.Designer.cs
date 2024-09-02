@@ -51,7 +51,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
-            this.cbxPartnerSelectedBook = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cbxClientSelectedBook = new System.Windows.Forms.ComboBox();
             this.btnBookEvent = new System.Windows.Forms.Button();
@@ -76,6 +75,16 @@
             this.btnCancel4 = new System.Windows.Forms.Button();
             this.cbxDeleteEvent = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txbEventNameBook = new System.Windows.Forms.TextBox();
+            this.txbEventCostBook = new System.Windows.Forms.TextBox();
+            this.txbEventCostUpdate = new System.Windows.Forms.TextBox();
+            this.txbEventNameUpdate = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -109,6 +118,11 @@
             // tabPage3
             // 
             this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage3.Controls.Add(this.checkedListBox2);
+            this.tabPage3.Controls.Add(this.txbEventCostUpdate);
+            this.tabPage3.Controls.Add(this.txbEventNameUpdate);
+            this.tabPage3.Controls.Add(this.label19);
+            this.tabPage3.Controls.Add(this.label20);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.cbxPartnerSelectedUpdate);
             this.tabPage3.Controls.Add(this.label16);
@@ -233,8 +247,12 @@
             this.tabPage2.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage2.Controls.Add(this.checkedListBox1);
+            this.tabPage2.Controls.Add(this.txbEventCostBook);
+            this.tabPage2.Controls.Add(this.txbEventNameBook);
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.cbxPartnerSelectedBook);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.cbxClientSelectedBook);
             this.tabPage2.Controls.Add(this.btnBookEvent);
@@ -253,14 +271,6 @@
             // 
             resources.ApplyResources(this.label14, "label14");
             this.label14.Name = "label14";
-            // 
-            // cbxPartnerSelectedBook
-            // 
-            this.cbxPartnerSelectedBook.FormattingEnabled = true;
-            this.cbxPartnerSelectedBook.Items.AddRange(new object[] {
-            resources.GetString("cbxPartnerSelectedBook.Items")});
-            resources.ApplyResources(this.cbxPartnerSelectedBook, "cbxPartnerSelectedBook");
-            this.cbxPartnerSelectedBook.Name = "cbxPartnerSelectedBook";
             // 
             // label8
             // 
@@ -431,6 +441,72 @@
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
             // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.Name = "label18";
+            // 
+            // txbEventNameBook
+            // 
+            this.txbEventNameBook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.txbEventNameBook, "txbEventNameBook");
+            this.txbEventNameBook.Name = "txbEventNameBook";
+            // 
+            // txbEventCostBook
+            // 
+            this.txbEventCostBook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.txbEventCostBook, "txbEventCostBook");
+            this.txbEventCostBook.Name = "txbEventCostBook";
+            // 
+            // txbEventCostUpdate
+            // 
+            this.txbEventCostUpdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.txbEventCostUpdate, "txbEventCostUpdate");
+            this.txbEventCostUpdate.Name = "txbEventCostUpdate";
+            // 
+            // txbEventNameUpdate
+            // 
+            this.txbEventNameUpdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.txbEventNameUpdate, "txbEventNameUpdate");
+            this.txbEventNameUpdate.Name = "txbEventNameUpdate";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.Name = "label19";
+            // 
+            // label20
+            // 
+            resources.ApplyResources(this.label20, "label20");
+            this.label20.Name = "label20";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            resources.GetString("checkedListBox1.Items"),
+            resources.GetString("checkedListBox1.Items1"),
+            resources.GetString("checkedListBox1.Items2"),
+            resources.GetString("checkedListBox1.Items3")});
+            resources.ApplyResources(this.checkedListBox1, "checkedListBox1");
+            this.checkedListBox1.Name = "checkedListBox1";
+            // 
+            // checkedListBox2
+            // 
+            this.checkedListBox2.FormattingEnabled = true;
+            this.checkedListBox2.Items.AddRange(new object[] {
+            resources.GetString("checkedListBox2.Items"),
+            resources.GetString("checkedListBox2.Items1"),
+            resources.GetString("checkedListBox2.Items2"),
+            resources.GetString("checkedListBox2.Items3")});
+            resources.ApplyResources(this.checkedListBox2, "checkedListBox2");
+            this.checkedListBox2.Name = "checkedListBox2";
+            // 
             // EventForm
             // 
             resources.ApplyResources(this, "$this");
@@ -502,9 +578,18 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cbxClientSelectedUpdate;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox cbxPartnerSelectedBook;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbxClientSelectedBook;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txbEventCostBook;
+        private System.Windows.Forms.TextBox txbEventNameBook;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txbEventCostUpdate;
+        private System.Windows.Forms.TextBox txbEventNameUpdate;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBox2;
     }
 }
 

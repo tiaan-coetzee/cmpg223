@@ -92,9 +92,9 @@ namespace Events_Form
                 cbxPartnerSelectedUpdate.DisplayMember = "PartnerFullName";
                 cbxPartnerSelectedUpdate.ValueMember = "Profession_ID";
                 cbxPartnerSelectedUpdate.DataSource = dt;
-                cbxPartnerSelectedBook.DisplayMember = "PartnerFullName";
-                cbxPartnerSelectedBook.ValueMember = "Profession_ID";
-                cbxPartnerSelectedBook.DataSource = dt;
+                //cbxPartnerSelectedBook.DisplayMember = "PartnerFullName";
+                //cbxPartnerSelectedBook.ValueMember = "Profession_ID";
+                //cbxPartnerSelectedBook.DataSource = dt;
                 con.Close();
             }
             catch (SqlException ex)
@@ -117,12 +117,41 @@ namespace Events_Form
                 CB_Selected_Event.BackColor = Color.White;
             }
             //END OF VALIDATION
+
+            try
+            {
+                // Open the connection
+                con.Open();
+
+                // Create the SQL command to retrieve data from the EVENTS table
+                cmd = new SqlCommand("SELECT * FROM EVENTS", con);
+
+                // Create a DataAdapter to fill a DataSet with the retrieved data
+                da = new SqlDataAdapter(cmd);
+                ds = new DataSet();
+                da.Fill(ds);
+
+                // Set the DataGridView's DataSource to the DataTable in the DataSet
+                dgvViewEvents.DataSource = ds.Tables[0];
+
+                // Close the connection
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that may occur
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Ensure the connection is closed, even if an exception occurs
+                con.Close();
+            }
         }
 
         private void btnBookEvent_Click(object sender, EventArgs e)
         {
             // VALIDATION TO BOOK EVENTS
-
             // Validate Venue Selection
             if (cbxAddEventVenue.SelectedIndex == -1)
             {
@@ -134,6 +163,13 @@ namespace Events_Form
             {
                 cbxAddEventVenue.BackColor = Color.White;
             }
+
+            // Ensure Client and Partner are selected
+            /*if (cbxClientSelectedBook.SelectedIndex == -1 || cbxPartnerSelectedBook.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a client and a partner for the event.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }*/
 
             // Validate Event Description
             eDescription = RTBEventDescription.Text.Trim();
@@ -148,39 +184,42 @@ namespace Events_Form
                 RTBEventDescription.BackColor = Color.White;
             }
 
-            /*
             // Validate Event Date
-            if (!DateTime.TryParse(dtpEventDate.Text, out DateTime eventDate))
+            if (!DateTime.TryParse(monthCalendar1.Text, out DateTime eventDate))
             {
-                dtpEventDate.BackColor = Color.Red;
+                monthCalendar1.BackColor = Color.Red;
                 MessageBox.Show("Please select a valid date for the event.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
-                dtpEventDate.BackColor = Color.White;
+                monthCalendar1.BackColor = Color.White;
             }
 
-            // Validate Event Cost
-            if (!decimal.TryParse(txtEventCost.Text.Trim(), out decimal eventCost) || eventCost <= 0)
+            //Validate Event name
+            eName = txbEventNameBook.Text.Trim();
+            if (eName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(eName, @"^[a-zA-Z]+$"))
             {
-                txtEventCost.BackColor = Color.Red;
-                MessageBox.Show("Please enter a valid positive cost for the event.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txbEventNameBook.BackColor = Color.Red;
+                MessageBox.Show("Please enter a valid event name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
-                txtEventCost.BackColor = Color.White;
+                txbEventNameBook.BackColor = Color.White;
             }
-            */
 
-            // Ensure Client and Partner are selected
-            if (cbxClientSelectedBook.SelectedIndex == -1 || cbxPartnerSelectedBook.SelectedIndex == -1)
+            // Validate Event Cost
+            if (!decimal.TryParse(txbEventCostBook.Text.Trim(), out decimal eventCost) || eventCost <= 0)
             {
-                MessageBox.Show("Please select a client and a partner for the event.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txbEventCostBook.BackColor = Color.Red;
+                MessageBox.Show("Please enter a valid positive value for the event cost.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            else
+            {
+                txbEventCostBook.BackColor = Color.White;
+            }
             // END OF VALIDATION
 
             // INSERT EVENT INTO DATABASE
@@ -194,7 +233,7 @@ namespace Events_Form
                 cmd.Parameters.AddWithValue("@Event_Name", eName);
                 cmd.Parameters.AddWithValue("@Venue_ID", cbxAddEventVenue.SelectedValue);
                 cmd.Parameters.AddWithValue("@Client_ID", cbxClientSelectedBook.SelectedValue);
-                cmd.Parameters.AddWithValue("@Partner_ID", cbxPartnerSelectedBook.SelectedValue);
+                //cmd.Parameters.AddWithValue("@Partner_ID", cbxPartnerSelectedBook.SelectedValue);
                 cmd.Parameters.AddWithValue("@Event_Date", eDate);
                 cmd.Parameters.AddWithValue("@Event_Description", eDescription);
                 cmd.Parameters.AddWithValue("@Event_Cost", ePrice);
