@@ -68,6 +68,10 @@ namespace Clients_form
                 cbxDeleteClient.DisplayMember = "ClientFullName";
                 cbxDeleteClient.ValueMember = "Client_ID";
                 cbxDeleteClient.DataSource = dt;
+                CB_Selected_Client.DisplayMember = "ClientFullName";
+                CB_Selected_Client.ValueMember = "Client_ID";
+                CB_Selected_Client.DataSource = dt;
+                con.Close();
             }
             catch (SqlException ex)
             {
@@ -296,6 +300,7 @@ namespace Clients_form
                 cbxUpdate_Client.DisplayMember = "ClientFullName";
                 cbxUpdate_Client.ValueMember = "Client_ID";
                 cbxUpdate_Client.DataSource = dt;
+                con.Close();
             }
             catch (SqlException ex)
             {
@@ -317,6 +322,7 @@ namespace Clients_form
                 cbxDeleteClient.DisplayMember = "ClientFullName";
                 cbxDeleteClient.ValueMember = "Client_ID";
                 cbxDeleteClient.DataSource = dt;
+                con.Close();
             }
             catch (SqlException ex)
             {
@@ -327,6 +333,35 @@ namespace Clients_form
         private void btnCancel1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnViewClients_Click(object sender, EventArgs e)
+        {
+            cID = (int)CB_Selected_Client.SelectedValue;
+            try
+            {
+                // Open the connection
+                con.Open();
+
+                // Create the SQL command to retrieve the required client information
+                cmd = new SqlCommand("SELECT Client_FirstName, Client_SurName, Client_Email, Client_ContactNumber FROM CLIENTS WHERE Client_ID = @Client_ID", con);
+                cmd.Parameters.AddWithValue("@Client_ID", cID);
+                // Create a DataAdapter to fill a DataTable with the retrieved data
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // Bind the DataTable to the DataGridView
+                dgvViewPartners.DataSource = dt;
+
+                // Close the connection
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that may occur
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

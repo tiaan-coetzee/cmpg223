@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnCancel1 = new System.Windows.Forms.Button();
+            this.dgvViewPartners = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.CB_Selected_Client = new System.Windows.Forms.ComboBox();
+            this.BtnViewClients = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.TBClientEmail = new System.Windows.Forms.TextBox();
@@ -62,20 +68,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btnCancel1 = new System.Windows.Forms.Button();
-            this.dgvViewPartners = new System.Windows.Forms.DataGridView();
-            this.label13 = new System.Windows.Forms.Label();
-            this.CB_Selected_Client = new System.Windows.Forms.ComboBox();
-            this.BtnViewClients = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewPartners)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewPartners)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -89,6 +89,74 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(703, 473);
             this.tabControl1.TabIndex = 24;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.btnCancel1);
+            this.tabPage4.Controls.Add(this.dgvViewPartners);
+            this.tabPage4.Controls.Add(this.label13);
+            this.tabPage4.Controls.Add(this.CB_Selected_Client);
+            this.tabPage4.Controls.Add(this.BtnViewClients);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(695, 447);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "View Clients";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel1
+            // 
+            this.btnCancel1.Font = new System.Drawing.Font("Calibri", 14.25F);
+            this.btnCancel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCancel1.Location = new System.Drawing.Point(465, 378);
+            this.btnCancel1.Name = "btnCancel1";
+            this.btnCancel1.Size = new System.Drawing.Size(175, 50);
+            this.btnCancel1.TabIndex = 3;
+            this.btnCancel1.Text = "Cancel";
+            this.btnCancel1.UseVisualStyleBackColor = true;
+            this.btnCancel1.Click += new System.EventHandler(this.btnCancel1_Click);
+            // 
+            // dgvViewPartners
+            // 
+            this.dgvViewPartners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViewPartners.Location = new System.Drawing.Point(20, 19);
+            this.dgvViewPartners.Name = "dgvViewPartners";
+            this.dgvViewPartners.RowHeadersWidth = 51;
+            this.dgvViewPartners.Size = new System.Drawing.Size(407, 322);
+            this.dgvViewPartners.TabIndex = 23;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 14.25F);
+            this.label13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label13.Location = new System.Drawing.Point(503, 22);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(109, 23);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Select client: \r\n";
+            // 
+            // CB_Selected_Client
+            // 
+            this.CB_Selected_Client.FormattingEnabled = true;
+            this.CB_Selected_Client.Items.AddRange(new object[] {
+            "test"});
+            this.CB_Selected_Client.Location = new System.Drawing.Point(441, 47);
+            this.CB_Selected_Client.Name = "CB_Selected_Client";
+            this.CB_Selected_Client.Size = new System.Drawing.Size(234, 21);
+            this.CB_Selected_Client.TabIndex = 1;
+            // 
+            // BtnViewClients
+            // 
+            this.BtnViewClients.Font = new System.Drawing.Font("Calibri", 14.25F);
+            this.BtnViewClients.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BtnViewClients.Location = new System.Drawing.Point(34, 378);
+            this.BtnViewClients.Name = "BtnViewClients";
+            this.BtnViewClients.Size = new System.Drawing.Size(175, 50);
+            this.BtnViewClients.TabIndex = 2;
+            this.BtnViewClients.Text = "View";
+            this.BtnViewClients.UseVisualStyleBackColor = true;
+            this.BtnViewClients.Click += new System.EventHandler(this.BtnViewClients_Click);
             // 
             // tabPage1
             // 
@@ -481,73 +549,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Clients";
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.btnCancel1);
-            this.tabPage4.Controls.Add(this.dgvViewPartners);
-            this.tabPage4.Controls.Add(this.label13);
-            this.tabPage4.Controls.Add(this.CB_Selected_Client);
-            this.tabPage4.Controls.Add(this.BtnViewClients);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(695, 447);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "View Clients";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel1
-            // 
-            this.btnCancel1.Font = new System.Drawing.Font("Calibri", 14.25F);
-            this.btnCancel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCancel1.Location = new System.Drawing.Point(465, 378);
-            this.btnCancel1.Name = "btnCancel1";
-            this.btnCancel1.Size = new System.Drawing.Size(175, 50);
-            this.btnCancel1.TabIndex = 3;
-            this.btnCancel1.Text = "Cancel";
-            this.btnCancel1.UseVisualStyleBackColor = true;
-            this.btnCancel1.Click += new System.EventHandler(this.btnCancel1_Click);
-            // 
-            // dgvViewPartners
-            // 
-            this.dgvViewPartners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvViewPartners.Location = new System.Drawing.Point(20, 19);
-            this.dgvViewPartners.Name = "dgvViewPartners";
-            this.dgvViewPartners.RowHeadersWidth = 51;
-            this.dgvViewPartners.Size = new System.Drawing.Size(407, 322);
-            this.dgvViewPartners.TabIndex = 23;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Calibri", 14.25F);
-            this.label13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label13.Location = new System.Drawing.Point(503, 22);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(109, 23);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Select client: \r\n";
-            // 
-            // CB_Selected_Client
-            // 
-            this.CB_Selected_Client.FormattingEnabled = true;
-            this.CB_Selected_Client.Items.AddRange(new object[] {
-            "test"});
-            this.CB_Selected_Client.Location = new System.Drawing.Point(441, 47);
-            this.CB_Selected_Client.Name = "CB_Selected_Client";
-            this.CB_Selected_Client.Size = new System.Drawing.Size(234, 21);
-            this.CB_Selected_Client.TabIndex = 1;
-            // 
-            // BtnViewClients
-            // 
-            this.BtnViewClients.Font = new System.Drawing.Font("Calibri", 14.25F);
-            this.BtnViewClients.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnViewClients.Location = new System.Drawing.Point(34, 378);
-            this.BtnViewClients.Name = "BtnViewClients";
-            this.BtnViewClients.Size = new System.Drawing.Size(175, 50);
-            this.BtnViewClients.TabIndex = 2;
-            this.BtnViewClients.Text = "View";
-            this.BtnViewClients.UseVisualStyleBackColor = true;
-            // 
             // Client_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -561,6 +562,9 @@
             this.Text = "Clients";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewPartners)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -570,9 +574,6 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewPartners)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
