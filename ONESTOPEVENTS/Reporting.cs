@@ -17,8 +17,8 @@ namespace ONESTOPEVENTS
         {
             InitializeComponent();
         }
-        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-        SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
 
         SqlCommand cmd;
         SqlDataAdapter da;
@@ -38,26 +38,25 @@ namespace ONESTOPEVENTS
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            ClearDataGridView();
         }
+
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-
+            ClearDataGridView();
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-
+            ClearDataGridView();
         }
  
     
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
-            {
-                dataGridView1.DataSource = null;
-            }
-
+            ClearDataGridView();
         }
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
@@ -199,8 +198,8 @@ namespace ONESTOPEVENTS
 
         private void GenerateReport(string query, DateTime startDate, DateTime endDate)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;"))
-            //using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;"))
+            //using (SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;"))
             {
                 try
                 {
