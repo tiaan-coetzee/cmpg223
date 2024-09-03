@@ -216,20 +216,40 @@ namespace ONESTOPEVENTS
 
         private void BtnDeleteProfession_Click(object sender, EventArgs e)
         {
-            profID = (int)cbxProfessionDelete.SelectedValue;
+            int profID = (int)cbxProfessionDelete.SelectedValue;
             try
             {
                 con.Open();
-                cmd = new SqlCommand("DELETE FROM PARTNER_PROFESSIONS WHERE Profession_ID = @Profession_ID", con);
-                cmd.Parameters.AddWithValue("@Profession_ID", profID);
-                cmd.ExecuteNonQuery();
-                con.Close();
 
-                MessageBox.Show("Profession deleted successfully");
+                // Check for dependencies
+                cmd = new SqlCommand(@"
+        SELECT COUNT(*) 
+        FROM PARTNERS 
+        WHERE Profession_ID = @Profession_ID;
+    ", con);
+                cmd.Parameters.AddWithValue("@Profession_ID", profID);
+                int partnerCount = (int)cmd.ExecuteScalar();
+
+                if (partnerCount > 0)
+                {
+                    MessageBox.Show("Cannot delete this profession. It is referenced by existing partners.");
+                }
+                else
+                {
+                    // No dependencies, safe to delete
+                    cmd = new SqlCommand("DELETE FROM PARTNER_PROFESSIONS WHERE Profession_ID = @Profession_ID", con);
+                    cmd.Parameters.AddWithValue("@Profession_ID", profID);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Profession deleted successfully");
+                }
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 

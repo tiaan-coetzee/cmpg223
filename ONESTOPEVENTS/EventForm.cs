@@ -64,6 +64,9 @@ namespace Events_Form
                 CB_Selected_Event.DisplayMember = "Event_Name";
                 CB_Selected_Event.ValueMember = "Event_ID";
                 CB_Selected_Event.DataSource = dt;
+                cbxDeleteEvent.DisplayMember = "Event_Name";
+                cbxDeleteEvent.ValueMember = "Event_ID";
+                cbxDeleteEvent.DataSource = dt;
 
                 cmd = new SqlCommand("SELECT Venue_ID, (Venue_Name + ' (R ' + CAST(Venue_Price AS VARCHAR) + ')') AS Venue FROM VENUES", con);
                 da = new SqlDataAdapter(cmd);
@@ -77,9 +80,7 @@ namespace Events_Form
                 cbxUpdateEvent_Venue.DisplayMember = "Venue";
                 cbxUpdateEvent_Venue.ValueMember = "Venue_ID";
                 cbxUpdateEvent_Venue.DataSource = dt;
-                cbxDeleteEvent.DisplayMember = "Venue";
-                cbxDeleteEvent.ValueMember = "Venue_ID";
-                cbxDeleteEvent.DataSource = dt;
+ 
 
                 cmd = new SqlCommand("SELECT Client_ID, (Client_FirstName + ' ' + Client_SurName) AS ClientFullName FROM CLIENTS", con);
                 da = new SqlDataAdapter(cmd);
@@ -681,6 +682,9 @@ namespace Events_Form
                 CB_Selected_Event.DisplayMember = "Event_Name";
                 CB_Selected_Event.ValueMember = "Event_ID";
                 CB_Selected_Event.DataSource = dt;
+                cbxDeleteEvent.DisplayMember = "Event_Name";
+                cbxDeleteEvent.ValueMember = "Event_ID";
+                cbxDeleteEvent.DataSource = dt;
 
                 cmd = new SqlCommand("SELECT Venue_ID, (Venue_Name + ' (R ' + CAST(Venue_Price AS VARCHAR) + ')') AS Venue FROM VENUES", con);
                 da = new SqlDataAdapter(cmd);
@@ -694,9 +698,7 @@ namespace Events_Form
                 cbxUpdateEvent_Venue.DisplayMember = "Venue";
                 cbxUpdateEvent_Venue.ValueMember = "Venue_ID";
                 cbxUpdateEvent_Venue.DataSource = dt;
-                cbxDeleteEvent.DisplayMember = "Venue";
-                cbxDeleteEvent.ValueMember = "Venue_ID";
-                cbxDeleteEvent.DataSource = dt;
+
 
                 cmd = new SqlCommand("SELECT Client_ID, (Client_FirstName + ' ' + Client_SurName) AS ClientFullName FROM CLIENTS", con);
                 da = new SqlDataAdapter(cmd);
