@@ -92,9 +92,9 @@ namespace Events_Form
                 cbxPartnerSelectedUpdate.DisplayMember = "PartnerFullName";
                 cbxPartnerSelectedUpdate.ValueMember = "Profession_ID";
                 cbxPartnerSelectedUpdate.DataSource = dt;
-                //cbxPartnerSelectedBook.DisplayMember = "PartnerFullName";
-                //cbxPartnerSelectedBook.ValueMember = "Profession_ID";
-                //cbxPartnerSelectedBook.DataSource = dt;
+                cbxPartnerSelectedBook.DisplayMember = "PartnerFullName";
+                cbxPartnerSelectedBook.ValueMember = "Profession_ID";
+                cbxPartnerSelectedBook.DataSource = dt;
                 con.Close();
             }
             catch (SqlException ex)
@@ -118,6 +118,7 @@ namespace Events_Form
             }
             //END OF VALIDATION
 
+            dgvViewEvents.DataSource = null;
             try
             {
                 // Open the connection
@@ -164,12 +165,12 @@ namespace Events_Form
                 cbxAddEventVenue.BackColor = Color.White;
             }
 
-            // Ensure Client and Partner are selected
-            /*if (cbxClientSelectedBook.SelectedIndex == -1 || cbxPartnerSelectedBook.SelectedIndex == -1)
+            //Ensure Client and Partner are selected
+            if (cbxClientSelectedBook.SelectedIndex == -1 || cbxPartnerSelectedBook.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a client and a partner for the event.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }*/
+            }
 
             // Validate Event Description
             eDescription = RTBEventDescription.Text.Trim();
@@ -233,7 +234,7 @@ namespace Events_Form
                 cmd.Parameters.AddWithValue("@Event_Name", eName);
                 cmd.Parameters.AddWithValue("@Venue_ID", cbxAddEventVenue.SelectedValue);
                 cmd.Parameters.AddWithValue("@Client_ID", cbxClientSelectedBook.SelectedValue);
-                //cmd.Parameters.AddWithValue("@Partner_ID", cbxPartnerSelectedBook.SelectedValue);
+                cmd.Parameters.AddWithValue("@Partner_ID", cbxPartnerSelectedBook.SelectedValue);
                 cmd.Parameters.AddWithValue("@Event_Date", eDate);
                 cmd.Parameters.AddWithValue("@Event_Description", eDescription);
                 cmd.Parameters.AddWithValue("@Event_Cost", ePrice);
