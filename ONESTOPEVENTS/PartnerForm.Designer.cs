@@ -312,6 +312,7 @@
             this.cbxProfessionUpdate.Name = "cbxProfessionUpdate";
             this.cbxProfessionUpdate.Size = new System.Drawing.Size(238, 27);
             this.cbxProfessionUpdate.TabIndex = 15;
+            this.cbxProfessionUpdate.DropDown += new System.EventHandler(this.cbxProfessionUpdate_DropDown);
             // 
             // lblPNameUpdate
             // 
@@ -409,6 +410,7 @@
             this.cbxAddPartnerProfession.Name = "cbxAddPartnerProfession";
             this.cbxAddPartnerProfession.Size = new System.Drawing.Size(238, 27);
             this.cbxAddPartnerProfession.TabIndex = 6;
+            this.cbxAddPartnerProfession.DropDown += new System.EventHandler(this.cbxAddPartnerProfession_DropDown);
             // 
             // label3
             // 
@@ -615,6 +617,7 @@
             this.CB_Selected_Partner.Name = "CB_Selected_Partner";
             this.CB_Selected_Partner.Size = new System.Drawing.Size(234, 27);
             this.CB_Selected_Partner.TabIndex = 1;
+            this.CB_Selected_Partner.DropDown += new System.EventHandler(this.CB_Selected_Partner_DropDown);
             // 
             // BtnViewEvent
             // 

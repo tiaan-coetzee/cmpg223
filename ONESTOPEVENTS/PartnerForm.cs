@@ -23,8 +23,8 @@ namespace ONESTOPEVENTS
         }
 
         //declaration of variables
-        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-        SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader re;
@@ -374,17 +374,17 @@ namespace ONESTOPEVENTS
             try
             {
                 con.Open();
-                cmd = new SqlCommand("SELECT Profession_ID, Partner_Profession FROM PARTNER_PROFESSIONS", con);
+                cmd = new SqlCommand("SELECT Partner_ID, Partner_FirstName + ' ' + Partner_SurName AS PartnerFullName FROM PARTNERS", con);
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
 
                 // DataTable to the ComboBox
                 cbxPartnerUpdate.DisplayMember = "PartnerFullName";
-                cbxPartnerUpdate.ValueMember = "Profession_ID";
+                cbxPartnerUpdate.ValueMember = "Partner_ID";
                 cbxPartnerUpdate.DataSource = dt;
                 cbxPSelectDelete.DisplayMember = "PartnerFullName";
-                cbxPSelectDelete.ValueMember = "Profession_ID";
+                cbxPSelectDelete.ValueMember = "Partner_ID";
                 cbxPSelectDelete.DataSource = dt;
                 con.Close();
             }
@@ -399,23 +399,39 @@ namespace ONESTOPEVENTS
             try
             {
                 con.Open();
-                cmd = new SqlCommand("SELECT Partner_ID, (Partner_FirstName + ' ' + Partner_SurName) AS PartnerFullName FROM PARTNERS", con);
+                cmd = new SqlCommand("SELECT Partner_ID, Partner_FirstName + ' ' + Partner_SurName AS PartnerFullName FROM PARTNERS", con);
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
 
                 // DataTable to the ComboBox
                 cbxPartnerUpdate.DisplayMember = "PartnerFullName";
-                cbxPartnerUpdate.ValueMember = "Profession_ID";
+                cbxPartnerUpdate.ValueMember = "Partner_ID";
                 cbxPartnerUpdate.DataSource = dt;
                 cbxPSelectDelete.DisplayMember = "PartnerFullName";
-                cbxPSelectDelete.ValueMember = "Profession_ID";
+                cbxPSelectDelete.ValueMember = "Partner_ID";
                 cbxPSelectDelete.DataSource = dt;
                 con.Close();
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Ensure the connection is closed
+                if (con.State == ConnectionState.Open)
+                {
+                    try
+                    {
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Log any exception that occurs while closing the connection
+                        MessageBox.Show("Error closing connection: " + ex.Message);
+                    }
+                }
             }
         }
 
@@ -451,6 +467,113 @@ namespace ONESTOPEVENTS
         private void btnCancel1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CB_Selected_Partner_DropDown(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT Partner_ID, Partner_FirstName + ' ' + Partner_SurName AS PartnerFullName FROM PARTNERS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxPartnerUpdate.DisplayMember = "PartnerFullName";
+                cbxPartnerUpdate.ValueMember = "Partner_ID";
+                cbxPartnerUpdate.DataSource = dt;
+                cbxPSelectDelete.DisplayMember = "PartnerFullName";
+                cbxPSelectDelete.ValueMember = "Partner_ID";
+                cbxPSelectDelete.DataSource = dt;
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void cbxAddPartnerProfession_DropDown(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT Profession_ID, Partner_Profession FROM PARTNER_PROFESSIONS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxAddPartnerProfession.DisplayMember = "Partner_Profession";
+                cbxAddPartnerProfession.ValueMember = "Profession_ID";
+                cbxAddPartnerProfession.DataSource = dt;
+                cbxProfessionUpdate.DisplayMember = "Partner_Profession";
+                cbxProfessionUpdate.ValueMember = "Profession_ID";
+                cbxProfessionUpdate.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT Partner_ID, (Partner_FirstName + ' ' + Partner_SurName) AS PartnerFullName FROM PARTNERS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxPartnerUpdate.DisplayMember = "PartnerFullName";
+                cbxPartnerUpdate.ValueMember = "Partner_ID";
+                cbxPartnerUpdate.DataSource = dt;
+                cbxPSelectDelete.DisplayMember = "PartnerFullName";
+                cbxPSelectDelete.ValueMember = "Partner_ID";
+                cbxPSelectDelete.DataSource = dt;
+                CB_Selected_Partner.DisplayMember = "PartnerFullName";
+                CB_Selected_Partner.ValueMember = "Partner_ID";
+                CB_Selected_Partner.DataSource = dt;
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void cbxProfessionUpdate_DropDown(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT Profession_ID, Partner_Profession FROM PARTNER_PROFESSIONS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxAddPartnerProfession.DisplayMember = "Partner_Profession";
+                cbxAddPartnerProfession.ValueMember = "Profession_ID";
+                cbxAddPartnerProfession.DataSource = dt;
+                cbxProfessionUpdate.DisplayMember = "Partner_Profession";
+                cbxProfessionUpdate.ValueMember = "Profession_ID";
+                cbxProfessionUpdate.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT Partner_ID, (Partner_FirstName + ' ' + Partner_SurName) AS PartnerFullName FROM PARTNERS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxPartnerUpdate.DisplayMember = "PartnerFullName";
+                cbxPartnerUpdate.ValueMember = "Partner_ID";
+                cbxPartnerUpdate.DataSource = dt;
+                cbxPSelectDelete.DisplayMember = "PartnerFullName";
+                cbxPSelectDelete.ValueMember = "Partner_ID";
+                cbxPSelectDelete.DataSource = dt;
+                CB_Selected_Partner.DisplayMember = "PartnerFullName";
+                CB_Selected_Partner.ValueMember = "Partner_ID";
+                CB_Selected_Partner.DataSource = dt;
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }
