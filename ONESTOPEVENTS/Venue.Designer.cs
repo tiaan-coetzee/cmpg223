@@ -95,6 +95,7 @@
             this.tabPartners.SelectedIndex = 0;
             this.tabPartners.Size = new System.Drawing.Size(700, 496);
             this.tabPartners.TabIndex = 0;
+            this.tabPartners.TabStop = false;
             // 
             // tabPage4
             // 
