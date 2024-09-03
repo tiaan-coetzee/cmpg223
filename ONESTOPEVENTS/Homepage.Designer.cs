@@ -91,7 +91,7 @@
             this.groupBox1.Location = new System.Drawing.Point(52, 121);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(185, 80);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Maintain venues";
             // 
@@ -113,7 +113,7 @@
             this.groupBox2.Location = new System.Drawing.Point(52, 293);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(390, 80);
-            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Maintain partners";
             // 
@@ -144,7 +144,7 @@
             this.groupBox3.Location = new System.Drawing.Point(257, 121);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(185, 80);
-            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Reports";
             // 
@@ -165,7 +165,7 @@
             this.groupBox4.Location = new System.Drawing.Point(52, 207);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(185, 80);
-            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Maintain events";
             // 
@@ -186,7 +186,7 @@
             this.groupBox5.Location = new System.Drawing.Point(257, 207);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(185, 80);
-            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Maintain clients";
             // 

@@ -23,8 +23,8 @@ namespace ONESTOPEVENTS
         }
 
         //declaration of variables
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader re;
@@ -348,16 +348,28 @@ namespace ONESTOPEVENTS
             try
             {
                 con.Open();
+
+                // Delete dependent records from EVENTS table
+                cmd = new SqlCommand("DELETE FROM EVENTS WHERE Partner_ID = @Partner_ID", con);
+                cmd.Parameters.AddWithValue("@Partner_ID", pID);
+                cmd.ExecuteNonQuery();
+
+                // Now delete the partner from PARTNERS table
                 cmd = new SqlCommand("DELETE FROM PARTNERS WHERE Partner_ID = @Partner_ID", con);
                 cmd.Parameters.AddWithValue("@Partner_ID", pID);
                 cmd.ExecuteNonQuery();
+
                 con.Close();
 
-                MessageBox.Show("Partner deleted successfully");
+                MessageBox.Show("Partner and associated events deleted successfully");
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("SQL Error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
