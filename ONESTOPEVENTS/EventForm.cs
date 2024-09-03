@@ -23,8 +23,8 @@ namespace Events_Form
         }
 
         // Initialise variables
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader re;
@@ -196,7 +196,8 @@ namespace Events_Form
             }
 
             // Validate Event Date
-            if (!DateTime.TryParse(monthCalendar1.Text, out eDate))
+            /*
+            if (!DateTime.TryParse(monthCalendar1.DateSelected, out eDate))
             {
                 monthCalendar1.BackColor = Color.Red;
                 MessageBox.Show("Please select a valid date for the event.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -205,7 +206,9 @@ namespace Events_Form
             else
             {
                 monthCalendar1.BackColor = Color.White;
-            }
+            }*/
+
+            DateTime eDate = monthCalendar1.SelectionStart;
 
             //Validate Event name
             eName = txbEventNameBook.Text.Trim();
@@ -221,9 +224,9 @@ namespace Events_Form
             }
             // END OF VALIDATION
 
-            vID = (int)cbxAddEventVenue.SelectedValue;
-            pID = (int)cbxPartnerSelectedBook.SelectedValue;
-            cID = (int)cbxClientSelectedBook.SelectedValue;
+            vID = (int)cbxAddEventVenue.SelectedIndex;
+            pID = (int)cbxPartnerSelectedBook.SelectedIndex;
+            cID = (int)cbxClientSelectedBook.SelectedIndex;
 
             // Cost Calculation
             try
@@ -331,17 +334,7 @@ namespace Events_Form
                 richTextBox2.BackColor = Color.White;
             }
 
-            // Validate Event Date
-            if (!DateTime.TryParse(monthCalendar2.Text, out eDate))
-            {
-                monthCalendar2.BackColor = Color.Red;
-                MessageBox.Show("Please select a valid date for the event.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
-            {
-                monthCalendar2.BackColor = Color.White;
-            }
+            DateTime selectedDate = monthCalendar1.SelectionStart;
 
             eName = txbEventNameUpdate.Text.Trim();
             if (eName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(eName, @"^[a-zA-Z]+$"))
@@ -356,10 +349,10 @@ namespace Events_Form
             }
             // END OF VALIIDATION
 
-            eID = (int)cbxUpdateEvent.SelectedValue;
-            vID = (int)cbxUpdateEvent_Venue.SelectedValue;
-            pID = (int)cbxPartnerSelectedUpdate.SelectedValue;
-            cID = (int)cbxClientSelectedUpdate.SelectedValue;
+            eID = (int)cbxUpdateEvent.SelectedIndex;
+            vID = (int)cbxUpdateEvent_Venue.SelectedIndex;
+            pID = (int)cbxPartnerSelectedUpdate.SelectedIndex;
+            cID = (int)cbxClientSelectedUpdate.SelectedIndex;
 
             // Cost Calculation
             try
