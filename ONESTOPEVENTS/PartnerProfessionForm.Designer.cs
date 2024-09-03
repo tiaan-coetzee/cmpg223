@@ -56,6 +56,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.btnCancel1 = new System.Windows.Forms.Button();
+            this.dgvViewProfessions = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.CB_Selected_Profession = new System.Windows.Forms.ComboBox();
+            this.BtnViewProfession = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabAddProfession.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -63,6 +69,8 @@
             this.tabPage5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewProfessions)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -97,11 +105,12 @@
             // 
             // tabAddProfession
             // 
+            this.tabAddProfession.Controls.Add(this.tabPage6);
             this.tabAddProfession.Controls.Add(this.tabPage3);
             this.tabAddProfession.Controls.Add(this.tabPage4);
             this.tabAddProfession.Controls.Add(this.tabPage5);
             this.tabAddProfession.Font = new System.Drawing.Font("Calibri", 12.25F);
-            this.tabAddProfession.Location = new System.Drawing.Point(28, 119);
+            this.tabAddProfession.Location = new System.Drawing.Point(25, 119);
             this.tabAddProfession.Name = "tabAddProfession";
             this.tabAddProfession.SelectedIndex = 0;
             this.tabAddProfession.Size = new System.Drawing.Size(700, 496);
@@ -122,7 +131,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(692, 464);
             this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Add Partner Profession";
+            this.tabPage3.Text = "Add Profession";
             // 
             // btnExit
             // 
@@ -209,7 +218,7 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(692, 464);
             this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Update Partner Profession Info";
+            this.tabPage4.Text = "Update Profession Info";
             // 
             // btnClose
             // 
@@ -314,7 +323,7 @@
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(692, 464);
             this.tabPage5.TabIndex = 2;
-            this.tabPage5.Text = "Delete Partner Profession";
+            this.tabPage5.Text = "Delete Profession";
             // 
             // label8
             // 
@@ -396,6 +405,73 @@
             this.label7.Text = "Partner Professions";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.btnCancel1);
+            this.tabPage6.Controls.Add(this.dgvViewProfessions);
+            this.tabPage6.Controls.Add(this.label9);
+            this.tabPage6.Controls.Add(this.CB_Selected_Profession);
+            this.tabPage6.Controls.Add(this.BtnViewProfession);
+            this.tabPage6.Location = new System.Drawing.Point(4, 28);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(692, 464);
+            this.tabPage6.TabIndex = 3;
+            this.tabPage6.Text = "View Professions";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel1
+            // 
+            this.btnCancel1.Font = new System.Drawing.Font("Calibri", 14.25F);
+            this.btnCancel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCancel1.Location = new System.Drawing.Point(464, 387);
+            this.btnCancel1.Name = "btnCancel1";
+            this.btnCancel1.Size = new System.Drawing.Size(175, 50);
+            this.btnCancel1.TabIndex = 19;
+            this.btnCancel1.Text = "Cancel";
+            this.btnCancel1.UseVisualStyleBackColor = true;
+            this.btnCancel1.Click += new System.EventHandler(this.btnCancel1_Click);
+            // 
+            // dgvViewProfessions
+            // 
+            this.dgvViewProfessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViewProfessions.Location = new System.Drawing.Point(19, 28);
+            this.dgvViewProfessions.Name = "dgvViewProfessions";
+            this.dgvViewProfessions.RowHeadersWidth = 51;
+            this.dgvViewProfessions.Size = new System.Drawing.Size(407, 322);
+            this.dgvViewProfessions.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F);
+            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label9.Location = new System.Drawing.Point(486, 33);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(150, 23);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Select profession: \r\n";
+            // 
+            // CB_Selected_Profession
+            // 
+            this.CB_Selected_Profession.FormattingEnabled = true;
+            this.CB_Selected_Profession.Items.AddRange(new object[] {
+            "test"});
+            this.CB_Selected_Profession.Location = new System.Drawing.Point(444, 58);
+            this.CB_Selected_Profession.Name = "CB_Selected_Profession";
+            this.CB_Selected_Profession.Size = new System.Drawing.Size(234, 27);
+            this.CB_Selected_Profession.TabIndex = 16;
+            // 
+            // BtnViewProfession
+            // 
+            this.BtnViewProfession.Font = new System.Drawing.Font("Calibri", 14.25F);
+            this.BtnViewProfession.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BtnViewProfession.Location = new System.Drawing.Point(33, 387);
+            this.BtnViewProfession.Name = "BtnViewProfession";
+            this.BtnViewProfession.Size = new System.Drawing.Size(175, 50);
+            this.BtnViewProfession.TabIndex = 15;
+            this.BtnViewProfession.Text = "View";
+            this.BtnViewProfession.UseVisualStyleBackColor = true;
+            // 
             // PartnerProfessionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,6 +495,9 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewProfessions)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -453,5 +532,11 @@
         private System.Windows.Forms.Label lblProfessionName;
         private System.Windows.Forms.TextBox txtProfessionCostUpdate;
         private System.Windows.Forms.TextBox txtProfessionNameUpdate;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button btnCancel1;
+        private System.Windows.Forms.DataGridView dgvViewProfessions;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox CB_Selected_Profession;
+        private System.Windows.Forms.Button BtnViewProfession;
     }
 }

@@ -67,16 +67,25 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnCancel1 = new System.Windows.Forms.Button();
+            this.dgvViewPartners = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.CB_Selected_Venues = new System.Windows.Forms.ComboBox();
+            this.BtnViewVenues = new System.Windows.Forms.Button();
             this.tabPartners.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewPartners)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPartners
             // 
+            this.tabPartners.Controls.Add(this.tabPage4);
             this.tabPartners.Controls.Add(this.tabPage1);
             this.tabPartners.Controls.Add(this.tabPage2);
             this.tabPartners.Controls.Add(this.tabPage3);
@@ -532,6 +541,74 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Venues";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage4.Controls.Add(this.btnCancel1);
+            this.tabPage4.Controls.Add(this.dgvViewPartners);
+            this.tabPage4.Controls.Add(this.label9);
+            this.tabPage4.Controls.Add(this.CB_Selected_Venues);
+            this.tabPage4.Controls.Add(this.BtnViewVenues);
+            this.tabPage4.Location = new System.Drawing.Point(4, 28);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(692, 464);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "View Venues";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel1
+            // 
+            this.btnCancel1.Font = new System.Drawing.Font("Calibri", 14.25F);
+            this.btnCancel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCancel1.Location = new System.Drawing.Point(464, 387);
+            this.btnCancel1.Name = "btnCancel1";
+            this.btnCancel1.Size = new System.Drawing.Size(175, 50);
+            this.btnCancel1.TabIndex = 19;
+            this.btnCancel1.Text = "Cancel";
+            this.btnCancel1.UseVisualStyleBackColor = true;
+            this.btnCancel1.Click += new System.EventHandler(this.btnCancel1_Click);
+            // 
+            // dgvViewPartners
+            // 
+            this.dgvViewPartners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViewPartners.Location = new System.Drawing.Point(19, 28);
+            this.dgvViewPartners.Name = "dgvViewPartners";
+            this.dgvViewPartners.RowHeadersWidth = 51;
+            this.dgvViewPartners.Size = new System.Drawing.Size(407, 322);
+            this.dgvViewPartners.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F);
+            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label9.Location = new System.Drawing.Point(502, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(115, 23);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Select venue: \r\n";
+            // 
+            // CB_Selected_Venues
+            // 
+            this.CB_Selected_Venues.FormattingEnabled = true;
+            this.CB_Selected_Venues.Items.AddRange(new object[] {
+            "test"});
+            this.CB_Selected_Venues.Location = new System.Drawing.Point(440, 56);
+            this.CB_Selected_Venues.Name = "CB_Selected_Venues";
+            this.CB_Selected_Venues.Size = new System.Drawing.Size(234, 27);
+            this.CB_Selected_Venues.TabIndex = 16;
+            // 
+            // BtnViewVenues
+            // 
+            this.BtnViewVenues.Font = new System.Drawing.Font("Calibri", 14.25F);
+            this.BtnViewVenues.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BtnViewVenues.Location = new System.Drawing.Point(33, 387);
+            this.BtnViewVenues.Name = "BtnViewVenues";
+            this.BtnViewVenues.Size = new System.Drawing.Size(175, 50);
+            this.BtnViewVenues.TabIndex = 15;
+            this.BtnViewVenues.Text = "View";
+            this.BtnViewVenues.UseVisualStyleBackColor = true;
+            // 
             // Venue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,6 +629,9 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewPartners)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -597,5 +677,11 @@
         private System.Windows.Forms.ComboBox cbxUpdateVenue;
         private System.Windows.Forms.CheckBox chbHasKitchen;
         private System.Windows.Forms.CheckBox chbUpdateVenue_HasKitchen;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button btnCancel1;
+        private System.Windows.Forms.DataGridView dgvViewPartners;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox CB_Selected_Venues;
+        private System.Windows.Forms.Button BtnViewVenues;
     }
 }
