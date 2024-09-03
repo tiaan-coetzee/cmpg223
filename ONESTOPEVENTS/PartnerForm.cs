@@ -21,8 +21,8 @@ namespace ONESTOPEVENTS
         }
 
         //declaration of variables
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader re;
@@ -309,7 +309,7 @@ namespace ONESTOPEVENTS
             }
             // END OF VALIDATION
 
-            pID = (int)cbxPartnerUpdate.SelectedValue;
+            pID = (int)cbxPartnerUpdate.SelectedIndex;
             try
             {
                 con.Open();
@@ -339,7 +339,7 @@ namespace ONESTOPEVENTS
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            pID = (int)cbxPSelectDelete.SelectedValue;
+            pID = (int)cbxPSelectDelete.SelectedIndex;
             try
             {
                 con.Open();
@@ -378,9 +378,7 @@ namespace ONESTOPEVENTS
                 cbxPartnerUpdate.DisplayMember = "PartnerFullName";
                 cbxPartnerUpdate.ValueMember = "Profession_ID";
                 cbxPartnerUpdate.DataSource = dt;
-                cbxPSelectDelete.DisplayMember = "PartnerFullName";
-                cbxPSelectDelete.ValueMember = "Profession_ID";
-                cbxPSelectDelete.DataSource = dt;
+
                 con.Close();
             }
             catch (SqlException ex)
@@ -412,6 +410,11 @@ namespace ONESTOPEVENTS
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void btnCancel1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

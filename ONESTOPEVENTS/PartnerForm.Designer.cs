@@ -146,7 +146,7 @@
             this.cbxPSelectDelete.Location = new System.Drawing.Point(438, 23);
             this.cbxPSelectDelete.Name = "cbxPSelectDelete";
             this.cbxPSelectDelete.Size = new System.Drawing.Size(238, 27);
-            this.cbxPSelectDelete.TabIndex = 28;
+            this.cbxPSelectDelete.TabIndex = 21;
             this.cbxPSelectDelete.DropDown += new System.EventHandler(this.cbxPSelectDelete_DropDown);
             this.cbxPSelectDelete.SelectedIndexChanged += new System.EventHandler(this.cbxPSelectDelete_SelectedIndexChanged);
             // 
@@ -160,7 +160,7 @@
             this.btnPDeteteCencel.Location = new System.Drawing.Point(501, 387);
             this.btnPDeteteCencel.Name = "btnPDeteteCencel";
             this.btnPDeteteCencel.Size = new System.Drawing.Size(175, 50);
-            this.btnPDeteteCencel.TabIndex = 30;
+            this.btnPDeteteCencel.TabIndex = 23;
             this.btnPDeteteCencel.Text = "CANCEL";
             this.btnPDeteteCencel.UseVisualStyleBackColor = false;
             this.btnPDeteteCencel.Click += new System.EventHandler(this.btnPDeteteCencel_Click);
@@ -174,7 +174,7 @@
             this.BtnDelete.Location = new System.Drawing.Point(34, 387);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(175, 50);
-            this.BtnDelete.TabIndex = 29;
+            this.BtnDelete.TabIndex = 22;
             this.BtnDelete.Text = "DELETE";
             this.BtnDelete.UseVisualStyleBackColor = false;
             this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
@@ -233,7 +233,7 @@
             this.txtPNameUpdate.Location = new System.Drawing.Point(438, 75);
             this.txtPNameUpdate.Name = "txtPNameUpdate";
             this.txtPNameUpdate.Size = new System.Drawing.Size(238, 27);
-            this.txtPNameUpdate.TabIndex = 26;
+            this.txtPNameUpdate.TabIndex = 13;
             // 
             // lblPEmailUpdate
             // 
@@ -252,7 +252,7 @@
             this.txtPSurnameUpdate.Location = new System.Drawing.Point(438, 127);
             this.txtPSurnameUpdate.Name = "txtPSurnameUpdate";
             this.txtPSurnameUpdate.Size = new System.Drawing.Size(238, 27);
-            this.txtPSurnameUpdate.TabIndex = 20;
+            this.txtPSurnameUpdate.TabIndex = 14;
             // 
             // btnCancel
             // 
@@ -264,7 +264,7 @@
             this.btnCancel.Location = new System.Drawing.Point(501, 387);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(175, 50);
-            this.btnCancel.TabIndex = 25;
+            this.btnCancel.TabIndex = 20;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -276,7 +276,7 @@
             this.txtPContactNumberUpdate.Location = new System.Drawing.Point(438, 179);
             this.txtPContactNumberUpdate.Name = "txtPContactNumberUpdate";
             this.txtPContactNumberUpdate.Size = new System.Drawing.Size(238, 27);
-            this.txtPContactNumberUpdate.TabIndex = 21;
+            this.txtPContactNumberUpdate.TabIndex = 15;
             // 
             // lblPURLUpdate
             // 
@@ -297,7 +297,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(34, 387);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(175, 50);
-            this.btnUpdate.TabIndex = 24;
+            this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -330,7 +330,7 @@
             this.txtPEmailUpdate.Location = new System.Drawing.Point(438, 231);
             this.txtPEmailUpdate.Name = "txtPEmailUpdate";
             this.txtPEmailUpdate.Size = new System.Drawing.Size(238, 27);
-            this.txtPEmailUpdate.TabIndex = 22;
+            this.txtPEmailUpdate.TabIndex = 16;
             // 
             // lblPSurnameUpdate
             // 
@@ -361,7 +361,7 @@
             this.cbxPartnerUpdate.Location = new System.Drawing.Point(438, 23);
             this.cbxPartnerUpdate.Name = "cbxPartnerUpdate";
             this.cbxPartnerUpdate.Size = new System.Drawing.Size(238, 27);
-            this.cbxPartnerUpdate.TabIndex = 6;
+            this.cbxPartnerUpdate.TabIndex = 12;
             this.cbxPartnerUpdate.DropDown += new System.EventHandler(this.cbxPartnerUpdate_DropDown);
             this.cbxPartnerUpdate.SelectedIndexChanged += new System.EventHandler(this.cbxPartner_SelectedIndexChanged);
             // 
@@ -372,7 +372,7 @@
             this.txtPURLUpdate.Location = new System.Drawing.Point(438, 283);
             this.txtPURLUpdate.Name = "txtPURLUpdate";
             this.txtPURLUpdate.Size = new System.Drawing.Size(238, 27);
-            this.txtPURLUpdate.TabIndex = 23;
+            this.txtPURLUpdate.TabIndex = 17;
             // 
             // tabPage1
             // 
@@ -427,7 +427,7 @@
             this.txtPartnerContactNumber.Location = new System.Drawing.Point(438, 145);
             this.txtPartnerContactNumber.Name = "txtPartnerContactNumber";
             this.txtPartnerContactNumber.Size = new System.Drawing.Size(238, 27);
-            this.txtPartnerContactNumber.TabIndex = 3;
+            this.txtPartnerContactNumber.TabIndex = 6;
             // 
             // label4
             // 
@@ -446,7 +446,7 @@
             this.txtPartnerSurname.Location = new System.Drawing.Point(438, 84);
             this.txtPartnerSurname.Name = "txtPartnerSurname";
             this.txtPartnerSurname.Size = new System.Drawing.Size(238, 27);
-            this.txtPartnerSurname.TabIndex = 2;
+            this.txtPartnerSurname.TabIndex = 5;
             // 
             // btnExit
             // 
@@ -458,7 +458,7 @@
             this.btnExit.Location = new System.Drawing.Point(501, 387);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(175, 50);
-            this.btnExit.TabIndex = 8;
+            this.btnExit.TabIndex = 11;
             this.btnExit.Text = "CANCEL";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -470,7 +470,7 @@
             this.txtPartnerEmail.Location = new System.Drawing.Point(436, 206);
             this.txtPartnerEmail.Name = "txtPartnerEmail";
             this.txtPartnerEmail.Size = new System.Drawing.Size(238, 27);
-            this.txtPartnerEmail.TabIndex = 4;
+            this.txtPartnerEmail.TabIndex = 7;
             // 
             // label5
             // 
@@ -491,7 +491,7 @@
             this.btnAdd.Location = new System.Drawing.Point(34, 387);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(175, 50);
-            this.btnAdd.TabIndex = 7;
+            this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -523,7 +523,7 @@
             this.txtPartnerName.Location = new System.Drawing.Point(438, 23);
             this.txtPartnerName.Name = "txtPartnerName";
             this.txtPartnerName.Size = new System.Drawing.Size(238, 27);
-            this.txtPartnerName.TabIndex = 1;
+            this.txtPartnerName.TabIndex = 4;
             // 
             // label2
             // 
@@ -542,7 +542,7 @@
             this.txtPartnerWebsite.Location = new System.Drawing.Point(436, 267);
             this.txtPartnerWebsite.Name = "txtPartnerWebsite";
             this.txtPartnerWebsite.Size = new System.Drawing.Size(238, 27);
-            this.txtPartnerWebsite.TabIndex = 5;
+            this.txtPartnerWebsite.TabIndex = 8;
             // 
             // tabPartners
             // 
@@ -579,9 +579,10 @@
             this.btnCancel1.Location = new System.Drawing.Point(466, 389);
             this.btnCancel1.Name = "btnCancel1";
             this.btnCancel1.Size = new System.Drawing.Size(175, 50);
-            this.btnCancel1.TabIndex = 14;
+            this.btnCancel1.TabIndex = 3;
             this.btnCancel1.Text = "Cancel";
             this.btnCancel1.UseVisualStyleBackColor = true;
+            this.btnCancel1.Click += new System.EventHandler(this.btnCancel1_Click);
             // 
             // dgvViewPartners
             // 
@@ -599,7 +600,7 @@
             this.BtnViewEvent.Location = new System.Drawing.Point(35, 389);
             this.BtnViewEvent.Name = "BtnViewEvent";
             this.BtnViewEvent.Size = new System.Drawing.Size(175, 50);
-            this.BtnViewEvent.TabIndex = 10;
+            this.BtnViewEvent.TabIndex = 2;
             this.BtnViewEvent.Text = "View";
             this.BtnViewEvent.UseVisualStyleBackColor = true;
             // 
@@ -611,7 +612,7 @@
             this.CB_Selected_Partner.Location = new System.Drawing.Point(442, 58);
             this.CB_Selected_Partner.Name = "CB_Selected_Partner";
             this.CB_Selected_Partner.Size = new System.Drawing.Size(234, 27);
-            this.CB_Selected_Partner.TabIndex = 11;
+            this.CB_Selected_Partner.TabIndex = 1;
             // 
             // label9
             // 

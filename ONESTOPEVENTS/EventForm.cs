@@ -215,6 +215,7 @@ namespace Events_Form
             }
 
             // Validate Event Cost
+            /*
             if (!decimal.TryParse(txbEventCostBook.Text.Trim(), out ePrice) || ePrice <= 0)
             {
                 txbEventCostBook.BackColor = Color.Red;
@@ -225,6 +226,7 @@ namespace Events_Form
             {
                 txbEventCostBook.BackColor = Color.White;
             }
+            */
             // END OF VALIDATION
 
             // INSERT EVENT INTO DATABASE
@@ -316,6 +318,7 @@ namespace Events_Form
                 txbEventNameUpdate.BackColor = Color.White;
             }
 
+            /*
             // Validate Event Cost
             if (!decimal.TryParse(txbEventCostUpdate.Text.Trim(), out ePrice) || ePrice <= 0)
             {
@@ -327,6 +330,7 @@ namespace Events_Form
             {
                 txbEventCostUpdate.BackColor = Color.White;
             }
+            */
             // END OF VALIIDATION
 
             eID = (int)cbxUpdateEvent.SelectedValue;
