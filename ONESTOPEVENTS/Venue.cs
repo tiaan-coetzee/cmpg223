@@ -123,7 +123,19 @@ namespace ONESTOPEVENTS
             }
             else
             {
-                rtbADDVENUE_Description.BackColor = Color.Red;
+                rtbADDVENUE_Description.BackColor = Color.White;
+            }
+
+            vAddress = rtbADDVENUE_Address.Text.Trim();
+            if (vAddress.Length == 0 || vAddress.Length > 255)
+            {
+                rtbADDVENUE_Address.BackColor = Color.Red;
+                MessageBox.Show("Please enter a venue description of at least 10 characters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                rtbADDVENUE_Address.BackColor = Color.White;
             }
 
             if (!decimal.TryParse(txtADDVENUE_Price.Text, out vPrice) || vPrice <= 0)
@@ -137,7 +149,6 @@ namespace ONESTOPEVENTS
                 txtADDVENUE_Price.BackColor = Color.White;
             }
 
-            vAddress = rtbADDVENUE_Address.Text.Trim();
             if (!int.TryParse(txtADDVENUE_Size.Text, out vSize))
             {
                 txtADDVENUE_Size.BackColor = Color.Red;
@@ -187,7 +198,7 @@ namespace ONESTOPEVENTS
             if (vName.Length == 0 || !System.Text.RegularExpressions.Regex.IsMatch(vName, @"^[a-zA-Z]+$"))
             {
                 txtUpdateVenue_Name.BackColor = Color.Red;
-                MessageBox.Show("Please enter a string for venues name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a string for venue name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -204,8 +215,21 @@ namespace ONESTOPEVENTS
             }
             else
             {
-                rtbUpdateVenue_Description.BackColor = Color.Red;
+                rtbUpdateVenue_Description.BackColor = Color.White;
             }
+
+            vAddress = rtbUpdateVenue_Address.Text.Trim();
+            if (vAddress.Length == 0 || vAddress.Length > 255)
+            {
+                rtbUpdateVenue_Address.BackColor = Color.Red;
+                MessageBox.Show("Please enter a venue description of at least 10 characters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                rtbUpdateVenue_Address.BackColor = Color.White;
+            }
+
 
             int tempvar;
             if (!int.TryParse(txtUpdateVenue_Price.Text, out tempvar))
@@ -331,6 +355,11 @@ namespace ONESTOPEVENTS
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void btnCancel1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
