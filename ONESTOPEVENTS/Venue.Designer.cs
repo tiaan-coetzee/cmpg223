@@ -154,6 +154,7 @@
             this.CB_Selected_Venues.Name = "CB_Selected_Venues";
             this.CB_Selected_Venues.Size = new System.Drawing.Size(234, 27);
             this.CB_Selected_Venues.TabIndex = 1;
+            this.CB_Selected_Venues.DropDown += new System.EventHandler(this.CB_Selected_Venues_DropDown);
             // 
             // BtnViewVenues
             // 

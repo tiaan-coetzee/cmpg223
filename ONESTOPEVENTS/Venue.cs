@@ -19,7 +19,7 @@ namespace ONESTOPEVENTS
     {
         //VARIABLES
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader re;
@@ -389,6 +389,28 @@ namespace ONESTOPEVENTS
             catch (Exception ex)
             {
                 // Handle any exceptions that may occur
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void CB_Selected_Venues_DropDown(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT Venue_ID, Venue_Name FROM VENUES", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                CB_Selected_Venues.DisplayMember = "Venue_Name";
+                CB_Selected_Venues.ValueMember = "Venue_ID";
+                CB_Selected_Venues.DataSource = dt;
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
