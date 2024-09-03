@@ -54,5 +54,10 @@ namespace ONESTOPEVENTS
             Venue venue_form = new Venue();
             venue_form.ShowDialog();
         }
+
+        private void Homepage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
