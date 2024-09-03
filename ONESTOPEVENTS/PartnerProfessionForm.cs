@@ -262,5 +262,10 @@ namespace ONESTOPEVENTS
         {
             this.Close();
         }
+
+        private void btnCancel1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
