@@ -146,7 +146,7 @@
             this.cbxPSelectDelete.Location = new System.Drawing.Point(438, 23);
             this.cbxPSelectDelete.Name = "cbxPSelectDelete";
             this.cbxPSelectDelete.Size = new System.Drawing.Size(238, 27);
-            this.cbxPSelectDelete.TabIndex = 28;
+            this.cbxPSelectDelete.TabIndex = 18;
             this.cbxPSelectDelete.DropDown += new System.EventHandler(this.cbxPSelectDelete_DropDown);
             this.cbxPSelectDelete.SelectedIndexChanged += new System.EventHandler(this.cbxPSelectDelete_SelectedIndexChanged);
             // 
@@ -160,7 +160,7 @@
             this.btnPDeteteCencel.Location = new System.Drawing.Point(501, 387);
             this.btnPDeteteCencel.Name = "btnPDeteteCencel";
             this.btnPDeteteCencel.Size = new System.Drawing.Size(175, 50);
-            this.btnPDeteteCencel.TabIndex = 30;
+            this.btnPDeteteCencel.TabIndex = 20;
             this.btnPDeteteCencel.Text = "CANCEL";
             this.btnPDeteteCencel.UseVisualStyleBackColor = false;
             this.btnPDeteteCencel.Click += new System.EventHandler(this.btnPDeteteCencel_Click);
@@ -174,7 +174,7 @@
             this.BtnDelete.Location = new System.Drawing.Point(34, 387);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(175, 50);
-            this.BtnDelete.TabIndex = 29;
+            this.BtnDelete.TabIndex = 19;
             this.BtnDelete.Text = "DELETE";
             this.BtnDelete.UseVisualStyleBackColor = false;
             this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
@@ -233,7 +233,7 @@
             this.txtPNameUpdate.Location = new System.Drawing.Point(438, 75);
             this.txtPNameUpdate.Name = "txtPNameUpdate";
             this.txtPNameUpdate.Size = new System.Drawing.Size(238, 27);
-            this.txtPNameUpdate.TabIndex = 26;
+            this.txtPNameUpdate.TabIndex = 10;
             // 
             // lblPEmailUpdate
             // 
@@ -252,7 +252,7 @@
             this.txtPSurnameUpdate.Location = new System.Drawing.Point(438, 127);
             this.txtPSurnameUpdate.Name = "txtPSurnameUpdate";
             this.txtPSurnameUpdate.Size = new System.Drawing.Size(238, 27);
-            this.txtPSurnameUpdate.TabIndex = 20;
+            this.txtPSurnameUpdate.TabIndex = 11;
             // 
             // btnCancel
             // 
@@ -264,7 +264,7 @@
             this.btnCancel.Location = new System.Drawing.Point(501, 387);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(175, 50);
-            this.btnCancel.TabIndex = 25;
+            this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -276,7 +276,7 @@
             this.txtPContactNumberUpdate.Location = new System.Drawing.Point(438, 179);
             this.txtPContactNumberUpdate.Name = "txtPContactNumberUpdate";
             this.txtPContactNumberUpdate.Size = new System.Drawing.Size(238, 27);
-            this.txtPContactNumberUpdate.TabIndex = 21;
+            this.txtPContactNumberUpdate.TabIndex = 12;
             // 
             // lblPURLUpdate
             // 
@@ -297,7 +297,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(34, 387);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(175, 50);
-            this.btnUpdate.TabIndex = 24;
+            this.btnUpdate.TabIndex = 16;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -311,7 +311,7 @@
             this.cbxProfessionUpdate.Location = new System.Drawing.Point(438, 335);
             this.cbxProfessionUpdate.Name = "cbxProfessionUpdate";
             this.cbxProfessionUpdate.Size = new System.Drawing.Size(238, 27);
-            this.cbxProfessionUpdate.TabIndex = 18;
+            this.cbxProfessionUpdate.TabIndex = 15;
             // 
             // lblPNameUpdate
             // 
@@ -330,7 +330,7 @@
             this.txtPEmailUpdate.Location = new System.Drawing.Point(438, 231);
             this.txtPEmailUpdate.Name = "txtPEmailUpdate";
             this.txtPEmailUpdate.Size = new System.Drawing.Size(238, 27);
-            this.txtPEmailUpdate.TabIndex = 22;
+            this.txtPEmailUpdate.TabIndex = 13;
             // 
             // lblPSurnameUpdate
             // 
@@ -361,7 +361,7 @@
             this.cbxPartnerUpdate.Location = new System.Drawing.Point(438, 23);
             this.cbxPartnerUpdate.Name = "cbxPartnerUpdate";
             this.cbxPartnerUpdate.Size = new System.Drawing.Size(238, 27);
-            this.cbxPartnerUpdate.TabIndex = 6;
+            this.cbxPartnerUpdate.TabIndex = 9;
             this.cbxPartnerUpdate.DropDown += new System.EventHandler(this.cbxPartnerUpdate_DropDown);
             this.cbxPartnerUpdate.SelectedIndexChanged += new System.EventHandler(this.cbxPartner_SelectedIndexChanged);
             // 
@@ -372,7 +372,7 @@
             this.txtPURLUpdate.Location = new System.Drawing.Point(438, 283);
             this.txtPURLUpdate.Name = "txtPURLUpdate";
             this.txtPURLUpdate.Size = new System.Drawing.Size(238, 27);
-            this.txtPURLUpdate.TabIndex = 23;
+            this.txtPURLUpdate.TabIndex = 14;
             // 
             // tabPage1
             // 
@@ -408,7 +408,7 @@
             this.cbxAddPartnerProfession.Location = new System.Drawing.Point(438, 328);
             this.cbxAddPartnerProfession.Name = "cbxAddPartnerProfession";
             this.cbxAddPartnerProfession.Size = new System.Drawing.Size(238, 27);
-            this.cbxAddPartnerProfession.TabIndex = 9;
+            this.cbxAddPartnerProfession.TabIndex = 6;
             // 
             // label3
             // 
@@ -556,6 +556,7 @@
             this.tabPartners.SelectedIndex = 0;
             this.tabPartners.Size = new System.Drawing.Size(700, 496);
             this.tabPartners.TabIndex = 1;
+            this.tabPartners.TabStop = false;
             // 
             // tabPage4
             // 
@@ -592,6 +593,7 @@
             this.dgvViewPartners.RowHeadersWidth = 51;
             this.dgvViewPartners.Size = new System.Drawing.Size(407, 322);
             this.dgvViewPartners.TabIndex = 13;
+            this.dgvViewPartners.TabStop = false;
             // 
             // label9
             // 
