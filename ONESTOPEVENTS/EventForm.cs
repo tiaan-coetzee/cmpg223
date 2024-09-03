@@ -50,9 +50,6 @@ namespace Events_Form
                 cbxUpdateEvent.DisplayMember = "Event_Name";
                 cbxUpdateEvent.ValueMember = "Event_ID";
                 cbxUpdateEvent.DataSource = dt;
-                cbxDeleteEvent.DisplayMember = "Event_Name";
-                cbxDeleteEvent.ValueMember = "Event_ID";
-                cbxDeleteEvent.DataSource = dt;
                 CB_Selected_Event.DisplayMember = "Event_Name";
                 CB_Selected_Event.ValueMember = "Event_ID";
                 CB_Selected_Event.DataSource = dt;
@@ -119,13 +116,15 @@ namespace Events_Form
             //END OF VALIDATION
 
             dgvViewEvents.DataSource = null;
+            eID = (int)CB_Selected_Event.SelectedValue;
             try
             {
                 // Open the connection
                 con.Open();
 
                 // Create the SQL command to retrieve data from the EVENTS table
-                cmd = new SqlCommand("SELECT * FROM EVENTS", con);
+                cmd = new SqlCommand("SELECT * FROM EVENTS WHERE Event_ID = @Event_ID", con);
+                cmd.Parameters.AddWithValue("@Event_ID", eID);
 
                 // Create a DataAdapter to fill a DataSet with the retrieved data
                 da = new SqlDataAdapter(cmd);
@@ -228,9 +227,7 @@ namespace Events_Form
             {
                 con.Open();
 
-                cmd = new SqlCommand("INSERT INTO EVENTS (Event_Name, Venue_ID, Client_ID, Partner_ID, Event_Date, Event_Description, Event_Cost) " +
-                                     "VALUES (@Event_Name, @Venue_ID, @Client_ID, @Partner_ID, @Event_Date, @Event_Description, @Event_Cost)", con);
-
+                cmd = new SqlCommand("INSERT INTO EVENTS (Event_Name, Venue_ID, Client_ID, Partner_ID, Event_Date, Event_Description, Event_Cost) VALUES (@Event_Name, @Venue_ID, @Client_ID, @Partner_ID, @Event_Date, @Event_Description, @Event_Cost)", con);
                 cmd.Parameters.AddWithValue("@Event_Name", eName);
                 cmd.Parameters.AddWithValue("@Venue_ID", cbxAddEventVenue.SelectedValue);
                 cmd.Parameters.AddWithValue("@Client_ID", cbxClientSelectedBook.SelectedValue);
