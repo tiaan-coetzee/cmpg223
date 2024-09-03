@@ -67,25 +67,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btnCancel1 = new System.Windows.Forms.Button();
-            this.dgvViewVenues = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.CB_Selected_Venue = new System.Windows.Forms.ComboBox();
-            this.BtnViewVenues = new System.Windows.Forms.Button();
             this.tabPartners.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewVenues)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPartners
             // 
-            this.tabPartners.Controls.Add(this.tabPage4);
             this.tabPartners.Controls.Add(this.tabPage1);
             this.tabPartners.Controls.Add(this.tabPage2);
             this.tabPartners.Controls.Add(this.tabPage3);
@@ -94,7 +85,7 @@
             this.tabPartners.Name = "tabPartners";
             this.tabPartners.SelectedIndex = 0;
             this.tabPartners.Size = new System.Drawing.Size(700, 496);
-            this.tabPartners.TabIndex = 14;
+            this.tabPartners.TabIndex = 3;
             // 
             // tabPage1
             // 
@@ -127,7 +118,7 @@
             this.chbHasKitchen.Location = new System.Drawing.Point(34, 332);
             this.chbHasKitchen.Name = "chbHasKitchen";
             this.chbHasKitchen.Size = new System.Drawing.Size(189, 27);
-            this.chbHasKitchen.TabIndex = 11;
+            this.chbHasKitchen.TabIndex = 18;
             this.chbHasKitchen.Text = "Has Kitchen (Yes/No)";
             this.chbHasKitchen.UseVisualStyleBackColor = true;
             // 
@@ -138,7 +129,7 @@
             this.rtbADDVENUE_Address.MaxLength = 255;
             this.rtbADDVENUE_Address.Name = "rtbADDVENUE_Address";
             this.rtbADDVENUE_Address.Size = new System.Drawing.Size(328, 82);
-            this.rtbADDVENUE_Address.TabIndex = 8;
+            this.rtbADDVENUE_Address.TabIndex = 17;
             this.rtbADDVENUE_Address.Text = "";
             // 
             // txtADDVENUE_Size
@@ -148,7 +139,7 @@
             this.txtADDVENUE_Size.Location = new System.Drawing.Point(438, 293);
             this.txtADDVENUE_Size.Name = "txtADDVENUE_Size";
             this.txtADDVENUE_Size.Size = new System.Drawing.Size(238, 27);
-            this.txtADDVENUE_Size.TabIndex = 10;
+            this.txtADDVENUE_Size.TabIndex = 16;
             // 
             // rtbADDVENUE_Description
             // 
@@ -157,7 +148,7 @@
             this.rtbADDVENUE_Description.MaxLength = 255;
             this.rtbADDVENUE_Description.Name = "rtbADDVENUE_Description";
             this.rtbADDVENUE_Description.Size = new System.Drawing.Size(328, 82);
-            this.rtbADDVENUE_Description.TabIndex = 7;
+            this.rtbADDVENUE_Description.TabIndex = 15;
             this.rtbADDVENUE_Description.Text = "";
             // 
             // label3
@@ -190,7 +181,7 @@
             this.btnExit.Location = new System.Drawing.Point(501, 387);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(175, 50);
-            this.btnExit.TabIndex = 13;
+            this.btnExit.TabIndex = 8;
             this.btnExit.Text = "CANCEL";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -202,7 +193,7 @@
             this.txtADDVENUE_Price.Location = new System.Drawing.Point(438, 254);
             this.txtADDVENUE_Price.Name = "txtADDVENUE_Price";
             this.txtADDVENUE_Price.Size = new System.Drawing.Size(238, 27);
-            this.txtADDVENUE_Price.TabIndex = 9;
+            this.txtADDVENUE_Price.TabIndex = 4;
             // 
             // btnAddVenue
             // 
@@ -213,7 +204,7 @@
             this.btnAddVenue.Location = new System.Drawing.Point(34, 387);
             this.btnAddVenue.Name = "btnAddVenue";
             this.btnAddVenue.Size = new System.Drawing.Size(175, 50);
-            this.btnAddVenue.TabIndex = 12;
+            this.btnAddVenue.TabIndex = 7;
             this.btnAddVenue.Text = "ADD";
             this.btnAddVenue.UseVisualStyleBackColor = false;
             this.btnAddVenue.Click += new System.EventHandler(this.btnAddVenue_Click);
@@ -245,7 +236,7 @@
             this.txtADDVENUE_Name.Location = new System.Drawing.Point(436, 23);
             this.txtADDVENUE_Name.Name = "txtADDVENUE_Name";
             this.txtADDVENUE_Name.Size = new System.Drawing.Size(238, 27);
-            this.txtADDVENUE_Name.TabIndex = 6;
+            this.txtADDVENUE_Name.TabIndex = 1;
             // 
             // label2
             // 
@@ -290,7 +281,7 @@
             this.chbUpdateVenue_HasKitchen.Location = new System.Drawing.Point(34, 331);
             this.chbUpdateVenue_HasKitchen.Name = "chbUpdateVenue_HasKitchen";
             this.chbUpdateVenue_HasKitchen.Size = new System.Drawing.Size(189, 27);
-            this.chbUpdateVenue_HasKitchen.TabIndex = 21;
+            this.chbUpdateVenue_HasKitchen.TabIndex = 40;
             this.chbUpdateVenue_HasKitchen.Text = "Has Kitchen (Yes/No)";
             this.chbUpdateVenue_HasKitchen.UseVisualStyleBackColor = true;
             // 
@@ -313,7 +304,7 @@
             this.cbxUpdateVenue.Location = new System.Drawing.Point(438, 23);
             this.cbxUpdateVenue.Name = "cbxUpdateVenue";
             this.cbxUpdateVenue.Size = new System.Drawing.Size(238, 27);
-            this.cbxUpdateVenue.TabIndex = 15;
+            this.cbxUpdateVenue.TabIndex = 38;
             this.cbxUpdateVenue.DropDown += new System.EventHandler(this.cbxUpdateVenue_DropDown);
             this.cbxUpdateVenue.SelectedIndexChanged += new System.EventHandler(this.cbxUpdateVenue_SelectedIndexChanged);
             // 
@@ -325,7 +316,7 @@
             this.rtbUpdateVenue_Address.MaxLength = 255;
             this.rtbUpdateVenue_Address.Name = "rtbUpdateVenue_Address";
             this.rtbUpdateVenue_Address.Size = new System.Drawing.Size(328, 82);
-            this.rtbUpdateVenue_Address.TabIndex = 18;
+            this.rtbUpdateVenue_Address.TabIndex = 37;
             this.rtbUpdateVenue_Address.Text = "";
             // 
             // txtUpdateVenue_Size
@@ -335,7 +326,7 @@
             this.txtUpdateVenue_Size.Location = new System.Drawing.Point(438, 298);
             this.txtUpdateVenue_Size.Name = "txtUpdateVenue_Size";
             this.txtUpdateVenue_Size.Size = new System.Drawing.Size(238, 27);
-            this.txtUpdateVenue_Size.TabIndex = 20;
+            this.txtUpdateVenue_Size.TabIndex = 36;
             // 
             // rtbUpdateVenue_Description
             // 
@@ -345,7 +336,7 @@
             this.rtbUpdateVenue_Description.MaxLength = 255;
             this.rtbUpdateVenue_Description.Name = "rtbUpdateVenue_Description";
             this.rtbUpdateVenue_Description.Size = new System.Drawing.Size(328, 82);
-            this.rtbUpdateVenue_Description.TabIndex = 17;
+            this.rtbUpdateVenue_Description.TabIndex = 35;
             this.rtbUpdateVenue_Description.Text = "";
             // 
             // lblUpdateVenuePrice
@@ -375,7 +366,7 @@
             this.txtUpdateVenue_Price.Location = new System.Drawing.Point(438, 265);
             this.txtUpdateVenue_Price.Name = "txtUpdateVenue_Price";
             this.txtUpdateVenue_Price.Size = new System.Drawing.Size(238, 27);
-            this.txtUpdateVenue_Price.TabIndex = 19;
+            this.txtUpdateVenue_Price.TabIndex = 31;
             // 
             // lblUpdateVenueName
             // 
@@ -404,7 +395,7 @@
             this.txtUpdateVenue_Name.Location = new System.Drawing.Point(438, 56);
             this.txtUpdateVenue_Name.Name = "txtUpdateVenue_Name";
             this.txtUpdateVenue_Name.Size = new System.Drawing.Size(238, 27);
-            this.txtUpdateVenue_Name.TabIndex = 16;
+            this.txtUpdateVenue_Name.TabIndex = 27;
             // 
             // lblUpdateVenueDescription
             // 
@@ -426,7 +417,7 @@
             this.btnCancel.Location = new System.Drawing.Point(501, 387);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(175, 50);
-            this.btnCancel.TabIndex = 23;
+            this.btnCancel.TabIndex = 25;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -440,7 +431,7 @@
             this.btnUpdateVenue.Location = new System.Drawing.Point(34, 387);
             this.btnUpdateVenue.Name = "btnUpdateVenue";
             this.btnUpdateVenue.Size = new System.Drawing.Size(175, 50);
-            this.btnUpdateVenue.TabIndex = 22;
+            this.btnUpdateVenue.TabIndex = 24;
             this.btnUpdateVenue.Text = "UPDATE";
             this.btnUpdateVenue.UseVisualStyleBackColor = false;
             this.btnUpdateVenue.Click += new System.EventHandler(this.btnUpdateVenue_Click);
@@ -479,7 +470,7 @@
             this.cbxDeleteVenue.Location = new System.Drawing.Point(438, 23);
             this.cbxDeleteVenue.Name = "cbxDeleteVenue";
             this.cbxDeleteVenue.Size = new System.Drawing.Size(238, 27);
-            this.cbxDeleteVenue.TabIndex = 24;
+            this.cbxDeleteVenue.TabIndex = 28;
             this.cbxDeleteVenue.DropDown += new System.EventHandler(this.cbxDeleteVenue_DropDown);
             this.cbxDeleteVenue.SelectedIndexChanged += new System.EventHandler(this.cbxDeleteVenue_SelectedIndexChanged);
             // 
@@ -493,7 +484,7 @@
             this.btnPDeteteCencel.Location = new System.Drawing.Point(501, 387);
             this.btnPDeteteCencel.Name = "btnPDeteteCencel";
             this.btnPDeteteCencel.Size = new System.Drawing.Size(175, 50);
-            this.btnPDeteteCencel.TabIndex = 26;
+            this.btnPDeteteCencel.TabIndex = 30;
             this.btnPDeteteCencel.Text = "CANCEL";
             this.btnPDeteteCencel.UseVisualStyleBackColor = false;
             this.btnPDeteteCencel.Click += new System.EventHandler(this.btnPDeteteCencel_Click);
@@ -507,7 +498,7 @@
             this.BtnDeleteVenue.Location = new System.Drawing.Point(34, 387);
             this.BtnDeleteVenue.Name = "BtnDeleteVenue";
             this.BtnDeleteVenue.Size = new System.Drawing.Size(175, 50);
-            this.BtnDeleteVenue.TabIndex = 25;
+            this.BtnDeleteVenue.TabIndex = 29;
             this.BtnDeleteVenue.Text = "DELETE";
             this.BtnDeleteVenue.UseVisualStyleBackColor = false;
             this.BtnDeleteVenue.Click += new System.EventHandler(this.BtnDeleteVenue_Click);
@@ -541,74 +532,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Venues";
             // 
-            // tabPage4
-            // 
-            this.tabPage4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPage4.Controls.Add(this.btnCancel1);
-            this.tabPage4.Controls.Add(this.dgvViewVenues);
-            this.tabPage4.Controls.Add(this.label9);
-            this.tabPage4.Controls.Add(this.CB_Selected_Venue);
-            this.tabPage4.Controls.Add(this.BtnViewVenues);
-            this.tabPage4.Location = new System.Drawing.Point(4, 28);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(692, 464);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "View Venues";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel1
-            // 
-            this.btnCancel1.Font = new System.Drawing.Font("Calibri", 14.25F);
-            this.btnCancel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCancel1.Location = new System.Drawing.Point(463, 386);
-            this.btnCancel1.Name = "btnCancel1";
-            this.btnCancel1.Size = new System.Drawing.Size(175, 50);
-            this.btnCancel1.TabIndex = 4;
-            this.btnCancel1.Text = "Cancel";
-            this.btnCancel1.UseVisualStyleBackColor = true;
-            this.btnCancel1.Click += new System.EventHandler(this.btnCancel1_Click);
-            // 
-            // dgvViewVenues
-            // 
-            this.dgvViewVenues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvViewVenues.Location = new System.Drawing.Point(18, 27);
-            this.dgvViewVenues.Name = "dgvViewVenues";
-            this.dgvViewVenues.RowHeadersWidth = 51;
-            this.dgvViewVenues.Size = new System.Drawing.Size(407, 322);
-            this.dgvViewVenues.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F);
-            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(501, 30);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(111, 23);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Select venue:";
-            // 
-            // CB_Selected_Venue
-            // 
-            this.CB_Selected_Venue.FormattingEnabled = true;
-            this.CB_Selected_Venue.Items.AddRange(new object[] {
-            "test"});
-            this.CB_Selected_Venue.Location = new System.Drawing.Point(439, 55);
-            this.CB_Selected_Venue.Name = "CB_Selected_Venue";
-            this.CB_Selected_Venue.Size = new System.Drawing.Size(234, 27);
-            this.CB_Selected_Venue.TabIndex = 2;
-            // 
-            // BtnViewVenues
-            // 
-            this.BtnViewVenues.Font = new System.Drawing.Font("Calibri", 14.25F);
-            this.BtnViewVenues.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnViewVenues.Location = new System.Drawing.Point(32, 386);
-            this.BtnViewVenues.Name = "BtnViewVenues";
-            this.BtnViewVenues.Size = new System.Drawing.Size(175, 50);
-            this.BtnViewVenues.TabIndex = 3;
-            this.BtnViewVenues.Text = "View";
-            this.BtnViewVenues.UseVisualStyleBackColor = true;
-            // 
             // Venue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -629,9 +552,6 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewVenues)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -677,11 +597,5 @@
         private System.Windows.Forms.ComboBox cbxUpdateVenue;
         private System.Windows.Forms.CheckBox chbHasKitchen;
         private System.Windows.Forms.CheckBox chbUpdateVenue_HasKitchen;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button btnCancel1;
-        private System.Windows.Forms.DataGridView dgvViewVenues;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox CB_Selected_Venue;
-        private System.Windows.Forms.Button BtnViewVenues;
     }
 }

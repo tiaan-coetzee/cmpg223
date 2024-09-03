@@ -309,7 +309,7 @@ namespace ONESTOPEVENTS
             }
             // END OF VALIDATION
 
-            pID = (int)cbxPartnerUpdate.SelectedIndex;
+            pID = (int)cbxPartnerUpdate.SelectedValue;
             try
             {
                 con.Open();
@@ -339,7 +339,7 @@ namespace ONESTOPEVENTS
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            pID = (int)cbxPSelectDelete.SelectedIndex;
+            pID = (int)cbxPSelectDelete.SelectedValue;
             try
             {
                 con.Open();
@@ -369,7 +369,7 @@ namespace ONESTOPEVENTS
             try
             {
                 con.Open();
-                cmd = new SqlCommand("SELECT Profession_ID, (Partner_FirstName + ' ' + Partner_SurName) AS PartnerFullName FROM PARTNERS", con);
+                cmd = new SqlCommand("SELECT Profession_ID, Partner_Profession FROM PARTNER_PROFESSIONS", con);
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
@@ -378,6 +378,9 @@ namespace ONESTOPEVENTS
                 cbxPartnerUpdate.DisplayMember = "PartnerFullName";
                 cbxPartnerUpdate.ValueMember = "Profession_ID";
                 cbxPartnerUpdate.DataSource = dt;
+                cbxPSelectDelete.DisplayMember = "PartnerFullName";
+                cbxPSelectDelete.ValueMember = "Profession_ID";
+                cbxPSelectDelete.DataSource = dt;
                 con.Close();
             }
             catch (SqlException ex)
@@ -400,17 +403,15 @@ namespace ONESTOPEVENTS
                 cbxPartnerUpdate.DisplayMember = "PartnerFullName";
                 cbxPartnerUpdate.ValueMember = "Profession_ID";
                 cbxPartnerUpdate.DataSource = dt;
+                cbxPSelectDelete.DisplayMember = "PartnerFullName";
+                cbxPSelectDelete.ValueMember = "Profession_ID";
+                cbxPSelectDelete.DataSource = dt;
                 con.Close();
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-        }
-
-        private void btnCancel1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

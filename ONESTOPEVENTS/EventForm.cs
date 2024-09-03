@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using static System.Net.Mime.MediaTypeNames;
+using ONESTOPEVENTS;
+using System.Reflection;
 
 
 namespace Events_Form
@@ -35,7 +37,11 @@ namespace Events_Form
         int vID;
         int cID;
         int pID;
+        decimal vRating;
+        decimal vPrice;
+        decimal pCost;
         decimal ePrice;
+        decimal BaseFee = 10000.00M;
         DateTime eDate;
 
         private void Events_Form_Load(object sender, EventArgs e)
@@ -85,7 +91,7 @@ namespace Events_Form
                 cbxClientSelectedUpdate.ValueMember = "Client_ID";
                 cbxClientSelectedUpdate.DataSource = dt;
 
-                cmd = new SqlCommand("SELECT Partner_ID, (Partner_FirstName + ' ' + Partner_SurName) AS PartnerFullName FROM PARTNERS", con);
+                cmd = new SqlCommand("SELECT P.Partner_ID, (P.Partner_FirstName + ' ' + P.Partner_SurName + ' (' + PP.Partner_Profession + ')') AS PartnerFullName FROM PARTNERS P INNER JOIN PARTNER_PROFESSIONS PP ON P.Profession_ID = PP.Profession_ID", con);
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
@@ -128,7 +134,7 @@ namespace Events_Form
                 con.Open();
 
                 // Create the SQL command to retrieve data from the EVENTS table
-                cmd = new SqlCommand("SELECT * FROM EVENTS WHERE Event_ID = @Event_ID", con);
+                cmd = new SqlCommand("SELECT E.Event_Name, V.Venue_Name, (C.Client_FirstName + ' ' + C.Client_SurName) AS Clients_FullName, (P.Partner_FirstName + ' ' + P.Partner_SurName + ' (' + PP.Partner_Profession + ')') AS Partners_FullName, E.Event_Date, E.Event_Description, E.Event_Cost FROM EVENTS E INNER JOIN VENUES V ON E.Venue_ID = V.Venue_ID INNER JOIN CLIENTS C ON E.Client_ID = C.Client_ID INNER JOIN PARTNERS P ON E.Partner_ID = P.Partner_ID INNER JOIN PARTNER_PROFESSIONS PP ON P.Profession_ID = PP.Profession_ID WHERE E.Event_ID = @Event_ID", con);
                 cmd.Parameters.AddWithValue("@Event_ID", eID);
 
                 // Create a DataAdapter to fill a DataSet with the retrieved data
@@ -213,24 +219,57 @@ namespace Events_Form
             {
                 txbEventNameBook.BackColor = Color.White;
             }
-
-            // Validate Event Cost
-            if (!decimal.TryParse(txbEventCostBook.Text.Trim(), out ePrice) || ePrice <= 0)
-            {
-                txbEventCostBook.BackColor = Color.Red;
-                MessageBox.Show("Please enter a valid positive value for the event cost.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
-            {
-                txbEventCostBook.BackColor = Color.White;
-            }
             // END OF VALIDATION
 
-            // INSERT EVENT INTO DATABASE
             vID = (int)cbxAddEventVenue.SelectedValue;
             pID = (int)cbxPartnerSelectedBook.SelectedValue;
             cID = (int)cbxClientSelectedBook.SelectedValue;
+
+            // Cost Calculation
+            try
+            {
+                // Open the connection
+                con.Open();
+
+                // Query to fetch Venue_Rating and Venue_Price based on selected Venue_ID
+                cmd = new SqlCommand("SELECT Venue_Rating, Venue_Price FROM VENUES WHERE Venue_ID = @Venue_ID", con);
+                cmd.Parameters.AddWithValue("@Venue_ID", vID);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        vRating = reader.GetDecimal(reader.GetOrdinal("Venue_Rating"));
+                        vPrice = reader.GetDecimal(reader.GetOrdinal("Venue_Price"));
+                    }
+                }
+
+                // Query to fetch Partner_Cost based on selected Partner_ID
+                cmd = new SqlCommand("SELECT PP.Partner_Cost FROM PARTNER_PROFESSIONS PP INNER JOIN PARTNERS P ON PP.Profession_ID = P.Profession_ID WHERE P.Partner_ID = @Partner_ID", con);
+                cmd.Parameters.AddWithValue("@Partner_ID", pID);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        pCost = reader.GetDecimal(reader.GetOrdinal("Partner_Cost"));
+                    }
+                }
+
+                ePrice = (BaseFee * (1 + vRating) + pCost + vPrice) * 1.15M;
+                lblDispCost.Text = ePrice.ToString("C");
+                lblDispCost.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that may occur
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Ensure the connection is closed, even if an exception occurs
+                con.Close();
+            }
+
+            // Read into database
             try
             {
                 con.Open();
@@ -315,24 +354,58 @@ namespace Events_Form
             {
                 txbEventNameUpdate.BackColor = Color.White;
             }
-
-            // Validate Event Cost
-            if (!decimal.TryParse(txbEventCostUpdate.Text.Trim(), out ePrice) || ePrice <= 0)
-            {
-                txbEventCostUpdate.BackColor = Color.Red;
-                MessageBox.Show("Please enter a valid positive value for the event cost.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
-            {
-                txbEventCostUpdate.BackColor = Color.White;
-            }
             // END OF VALIIDATION
 
             eID = (int)cbxUpdateEvent.SelectedValue;
             vID = (int)cbxUpdateEvent_Venue.SelectedValue;
             pID = (int)cbxPartnerSelectedUpdate.SelectedValue;
             cID = (int)cbxClientSelectedUpdate.SelectedValue;
+
+            // Cost Calculation
+            try
+            {
+                // Open the connection
+                con.Open();
+
+                // Query to fetch Venue_Rating and Venue_Price based on selected Venue_ID
+                cmd = new SqlCommand("SELECT Venue_Rating, Venue_Price FROM VENUES WHERE Venue_ID = @Venue_ID", con);
+                cmd.Parameters.AddWithValue("@Venue_ID", vID);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        vRating = reader.GetDecimal(reader.GetOrdinal("Venue_Rating"));
+                        vPrice = reader.GetDecimal(reader.GetOrdinal("Venue_Price"));
+                    }
+                }
+
+                // Query to fetch Partner_Cost based on selected Partner_ID
+                cmd = new SqlCommand("SELECT PP.Partner_Cost FROM PARTNER_PROFESSIONS PP INNER JOIN PARTNERS P ON PP.Profession_ID = P.Profession_ID WHERE P.Partner_ID = @Partner_ID", con);
+                cmd.Parameters.AddWithValue("@Partner_ID", pID);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        pCost = reader.GetDecimal(reader.GetOrdinal("Partner_Cost"));
+                    }
+                }
+
+                ePrice = (BaseFee * (1 + vRating) + pCost + vPrice) * 1.15M;
+                LBLDisp2.Text = ePrice.ToString("C");
+                LBLDisp2.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that may occur
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Ensure the connection is closed, even if an exception occurs
+                con.Close();
+            }
+
+            // Read into database
             try
             {
                 con.Open();
