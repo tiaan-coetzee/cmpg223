@@ -30,6 +30,9 @@ namespace Events_Form
         string eDescription;
         string eName;
         int eID;
+        int vID;
+        int cID;
+        int pID;
         decimal ePrice;
         DateTime eDate;
 
@@ -185,7 +188,7 @@ namespace Events_Form
             }
 
             // Validate Event Date
-            if (!DateTime.TryParse(monthCalendar1.Text, out DateTime eventDate))
+            if (!DateTime.TryParse(monthCalendar1.Text, out eDate))
             {
                 monthCalendar1.BackColor = Color.Red;
                 MessageBox.Show("Please select a valid date for the event.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -210,7 +213,7 @@ namespace Events_Form
             }
 
             // Validate Event Cost
-            if (!decimal.TryParse(txbEventCostBook.Text.Trim(), out decimal eventCost) || eventCost <= 0)
+            if (!decimal.TryParse(txbEventCostBook.Text.Trim(), out ePrice) || ePrice <= 0)
             {
                 txbEventCostBook.BackColor = Color.Red;
                 MessageBox.Show("Please enter a valid positive value for the event cost.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -223,15 +226,18 @@ namespace Events_Form
             // END OF VALIDATION
 
             // INSERT EVENT INTO DATABASE
+            vID = (int)cbxAddEventVenue.SelectedValue;
+            pID = (int)cbxPartnerSelectedBook.SelectedValue;
+            cID = (int)cbxClientSelectedBook.SelectedValue;
             try
             {
                 con.Open();
 
                 cmd = new SqlCommand("INSERT INTO EVENTS (Event_Name, Venue_ID, Client_ID, Partner_ID, Event_Date, Event_Description, Event_Cost) VALUES (@Event_Name, @Venue_ID, @Client_ID, @Partner_ID, @Event_Date, @Event_Description, @Event_Cost)", con);
                 cmd.Parameters.AddWithValue("@Event_Name", eName);
-                cmd.Parameters.AddWithValue("@Venue_ID", cbxAddEventVenue.SelectedValue);
-                cmd.Parameters.AddWithValue("@Client_ID", cbxClientSelectedBook.SelectedValue);
-                cmd.Parameters.AddWithValue("@Partner_ID", cbxPartnerSelectedBook.SelectedValue);
+                cmd.Parameters.AddWithValue("@Venue_ID", vID);
+                cmd.Parameters.AddWithValue("@Client_ID", cID);
+                cmd.Parameters.AddWithValue("@Partner_ID", pID);
                 cmd.Parameters.AddWithValue("@Event_Date", eDate);
                 cmd.Parameters.AddWithValue("@Event_Description", eDescription);
                 cmd.Parameters.AddWithValue("@Event_Cost", ePrice);
@@ -283,18 +289,57 @@ namespace Events_Form
             {
                 richTextBox2.BackColor = Color.White;
             }
+
+            // Validate Event Date
+            if (!DateTime.TryParse(monthCalendar2.Text, out eDate))
+            {
+                monthCalendar2.BackColor = Color.Red;
+                MessageBox.Show("Please select a valid date for the event.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                monthCalendar2.BackColor = Color.White;
+            }
+
+            eName = txbEventNameUpdate.Text.Trim();
+            if (eName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(eName, @"^[a-zA-Z]+$"))
+            {
+                txbEventNameUpdate.BackColor = Color.Red;
+                MessageBox.Show("Please enter a valid event name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                txbEventNameUpdate.BackColor = Color.White;
+            }
+
+            // Validate Event Cost
+            if (!decimal.TryParse(txbEventCostUpdate.Text.Trim(), out ePrice) || ePrice <= 0)
+            {
+                txbEventCostUpdate.BackColor = Color.Red;
+                MessageBox.Show("Please enter a valid positive value for the event cost.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                txbEventCostUpdate.BackColor = Color.White;
+            }
             // END OF VALIIDATION
 
             eID = (int)cbxUpdateEvent.SelectedValue;
+            vID = (int)cbxUpdateEvent_Venue.SelectedValue;
+            pID = (int)cbxPartnerSelectedUpdate.SelectedValue;
+            cID = (int)cbxClientSelectedUpdate.SelectedValue;
             try
             {
                 con.Open();
 
                 cmd = new SqlCommand("UPDATE EVENTS SET Event_Name = @Event_Name, Venue_ID = @Venue_ID, Client_ID = @Client_ID, Partner_ID = @Partner_ID, Event_Date = @Event_Date, Event_Description = @Event_Description, Event_Cost = @Event_Cost WHERE Event_ID = @Event_ID ", con);
                 cmd.Parameters.AddWithValue("@Event_Name", eName);
-                cmd.Parameters.AddWithValue("@Venue_ID", cbxUpdateEvent_Venue.SelectedValue);
-                cmd.Parameters.AddWithValue("@Client_ID", cbxClientSelectedUpdate.SelectedValue);
-                cmd.Parameters.AddWithValue("@Partner_ID", cbxPartnerSelectedUpdate.SelectedValue);
+                cmd.Parameters.AddWithValue("@Venue_ID", vID);
+                cmd.Parameters.AddWithValue("@Client_ID", cID);
+                cmd.Parameters.AddWithValue("@Partner_ID", pID);
                 cmd.Parameters.AddWithValue("@Event_Date", eDate);
                 cmd.Parameters.AddWithValue("@Event_Description", eDescription);
                 cmd.Parameters.AddWithValue("@Event_Cost", ePrice);
