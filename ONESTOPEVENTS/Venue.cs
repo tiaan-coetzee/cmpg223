@@ -298,6 +298,22 @@ namespace ONESTOPEVENTS
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                // Ensure the connection is closed
+                if (con.State == ConnectionState.Open)
+                {
+                    try
+                    {
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Log any exception that occurs while closing the connection
+                        MessageBox.Show("Error closing connection: " + ex.Message);
+                    }
+                }
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
