@@ -119,6 +119,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage6.Controls.Add(this.btnCancel1);
             this.tabPage6.Controls.Add(this.dgvViewProfessions);
             this.tabPage6.Controls.Add(this.label9);

@@ -181,20 +181,36 @@ namespace ONESTOPEVENTS
                 txtProfessionCostUpdate.BackColor = Color.White;
             }
 
+            // Retrieve Pid from the combobox (cbxPartnerUpdate)
+            int Pid = (int)cbxPartnerUpdate.SelectedValue;
+
             try
             {
                 con.Open();
+
+                // Correct the SQL UPDATE statement
                 cmd = new SqlCommand("UPDATE PARTNER_PROFESSIONS SET Partner_Profession = @Partner_Profession, Partner_Cost = @Partner_Cost WHERE Profession_ID = @Profession_ID", con);
+
+                // Add parameters with values
                 cmd.Parameters.AddWithValue("@Partner_Profession", profName);
                 cmd.Parameters.AddWithValue("@Partner_Cost", profCost);
+                cmd.Parameters.AddWithValue("@Profession_ID", Pid);
+
+                // Execute the query
                 cmd.ExecuteNonQuery();
+
+                // Close the connection
                 con.Close();
 
                 MessageBox.Show("Profession updated successfully");
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("SQL Error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
