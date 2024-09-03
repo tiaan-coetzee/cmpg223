@@ -92,6 +92,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage4.Controls.Add(this.btnCancel1);
             this.tabPage4.Controls.Add(this.dgvViewPartners);
             this.tabPage4.Controls.Add(this.label13);

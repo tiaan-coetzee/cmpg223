@@ -23,8 +23,8 @@ namespace Events_Form
         }
 
         // Initialise variables
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader re;
@@ -337,7 +337,7 @@ namespace Events_Form
                 richTextBox2.BackColor = Color.White;
             }
 
-            DateTime selectedDate = monthCalendar1.SelectionStart;
+            DateTime eDate = monthCalendar2.SelectionStart;
 
             eName = txbEventNameUpdate.Text.Trim();
             if (eName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(eName, @"^[a-zA-Z]+$"))
@@ -418,7 +418,7 @@ namespace Events_Form
                 cmd.ExecuteNonQuery();
                 con.Close();
 
-                MessageBox.Show("Event booked successfully!");
+                MessageBox.Show("Event modified successfully!");
             }
             catch (SqlException ex)
             {
@@ -728,6 +728,25 @@ namespace Events_Form
             catch (SqlException ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            eID = (int)cbxDeleteEvent.SelectedValue;
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("DELETE FROM EVENTS WHERE Event_ID = @Event_ID", con);
+                cmd.Parameters.AddWithValue("@Event_ID", eID);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                MessageBox.Show("Event deleted successfully");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
