@@ -37,189 +37,16 @@ namespace ONESTOPEVENTS
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            /*
-            try
-            {
-                int cnt = 0;
-               
-                con.Open();
-
-                adapter = new SqlDataAdapter();
-                ds = new DataSet();
-                string P = $"SELECT Partner_ID FROM tblPartners";
-              string sql = $"SELECT Partner_ID, Partner_Name,Partner_Surname,Partner_Number,Partner_Email, MAX(Partner_Earnings) AS MaxEarnings\r\nFROM tblPartners\r\nGROUP BY  Partner_ID, Partner_Name,Partner_Surname,Partner_Number,Partner_Email\r\nORDER BY MaxEarnings DESC";
-             while(cnt < 10)
-                {
-                    if (P == P)
-                    {
-                        cnt++;
-                    }
-                    else
-                    {
-
-
-                        cmd = new SqlCommand(sql, con);
-                        adapter.SelectCommand = cmd;
-                        adapter.Fill(ds, "ST");
-
-                        dataGridView1.DataSource = ds;
-                        dataGridView1.DataMember = ("ST");
-                        cnt++;
-                    }
-
-                }
-                
-
-                
-
-                con.Close();
-
-
-            }
-            catch (SqlException error)
-            {
-
-                MessageBox.Show(error.Message);
-
-            }
-            */
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            {
-                /*
-                try
-                {
-                    // Initialize the SqlConnection
-                 
-                    
-                        // Open the connection
-                        con.Open();
-
-                        // Define the SQL query to fetch the most popular venue
-                        string sql = @"
-                    SELECT TOP 1
-                        p.Venue AS VenueName,
-                        COUNT(e.EventId) AS EventCount
-                    FROM
-                        tblPartners p
-                    LEFT JOIN
-                        tblEvents e ON p.Venue = e.Venue
-                    GROUP BY
-                        p.Venue
-                    ORDER BY
-                        EventCount DESC;
-                ";
-
-                        // Initialize the SqlCommand
-                        cmd = new SqlCommand(sql, con);
-
-                        // Initialize the SqlDataAdapter
-                        adapter = new SqlDataAdapter(cmd);
-
-                        // Initialize the DataSet
-                        ds = new DataSet();
-
-                        // Fill the DataSet with the query result
-                        adapter.Fill(ds, "MostPopularVenue");
-
-                        // Check if there is data to display
-                        if (ds.Tables["MostPopularVenue"].Rows.Count > 0)
-                        {
-                            // Bind the DataSet to the DataGridView
-                            dataGridView1.DataSource = ds.Tables["MostPopularVenue"];
-                        }
-                        else
-                        {
-                            // Clear DataGridView if no data is found
-                            dataGridView1.DataSource = null;
-                            MessageBox.Show("No popular venue found.");
-                        }
-                    
-                }
-                catch (Exception ex)
-                {
-                    // Handle exceptions
-                    MessageBox.Show("An error occurred: " + ex.Message);
-                }
-                finally
-                {
-                    // Ensure the connection is closed
-                    if (con != null && con.State == ConnectionState.Open)
-                    {
-                        con.Close();
-                    }
-                }
-                */
-            }
 
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            /*
-            try
-            {
-                // Initialize the SqlConnection
-                
-                    // Open the connection
-                    con.Open();
 
-                    // Define the SQL query to fetch the most popular event
-                    string sql = @"
-                    SELECT TOP 1
-                        e.EventId,
-                        e.EventName,
-                        COUNT(e.EventId) AS EventCount
-                    FROM
-                        tblEvents e
-                    GROUP BY
-                        e.EventId, e.EventName
-                    ORDER BY
-                        EventCount DESC;
-                ";
-
-                    // Initialize the SqlCommand
-                    cmd = new SqlCommand(sql, con);
-
-                    // Initialize the SqlDataAdapter
-                    adapter = new SqlDataAdapter(cmd);
-
-                    // Initialize the DataSet
-                    ds = new DataSet();
-
-                    // Fill the DataSet with the query result
-                    adapter.Fill(ds, "MostPopularEvent");
-
-                    // Check if there is data to display
-                    if (ds.Tables["MostPopularEvent"].Rows.Count > 0)
-                    {
-                        // Bind the DataSet to the DataGridView
-                        dataGridView1.DataSource = ds.Tables["MostPopularEvent"];
-                    }
-                    else
-                    {
-                        // Clear DataGridView if no data is found
-                        dataGridView1.DataSource = null;
-                        MessageBox.Show("No popular event found.");
-                    }
-                
-            }
-            catch (Exception ex)
-            {
-                // Handle exceptions
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
-            finally
-            {
-                // Ensure the connection is closed
-                if (con != null && con.State == ConnectionState.Open)
-                {
-                    con.Close();
-                }
-            }
-            */
         }
  
     
@@ -227,104 +54,14 @@ namespace ONESTOPEVENTS
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
             {
-                /*
-                try
-                {
-                    // Initialize the SqlConnection
-                  
-                        // Open the connection
-                        con.Open();
-
-                        // Define the SQL query to fetch the most popular venue
-                        string sql = @"
-                    SELECT TOP 1
-                        p.Venue AS VenueName,
-                        COUNT(e.EventId) AS EventCount
-                    FROM
-                        tblPartners p
-                    LEFT JOIN
-                        tblEvents e ON p.Venue = e.Venue
-                    GROUP BY
-                        p.Venue
-                    ORDER BY
-                        EventCount DESC;
-                ";
-
-                        // Initialize the SqlCommand
-                        cmd = new SqlCommand(sql, con);
-
-                        // Initialize the SqlDataAdapter
-                        adapter = new SqlDataAdapter(cmd);
-
-                        // Initialize the DataSet
-                        ds = new DataSet();
-
-                        // Fill the DataSet with the query result
-                        adapter.Fill(ds, "MostPopularVenue");
-
-                        // Check if there is data to display
-                        if (ds.Tables["MostPopularVenue"].Rows.Count > 0)
-                        {
-                            // Bind the DataSet to the DataGridView
-                            dataGridView1.DataSource = ds.Tables["MostPopularVenue"];
-                        }
-                        else
-                        {
-                            // Clear DataGridView if no data is found
-                            dataGridView1.DataSource = null;
-                            MessageBox.Show("No popular venue found.");
-                        }
-                    
-                }
-                catch (Exception ex)
-                {
-                    // Handle exceptions
-                    MessageBox.Show("An error occurred: " + ex.Message);
-                }
-                finally
-                {
-                    // Ensure the connection is closed
-                    if (con != null && con.State == ConnectionState.Open)
-                    {
-                        con.Close();
-                    }
-                }
-                */
+                dataGridView1.DataSource = null;
             }
 
         }
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
-            /* KYLE SQL
-            try
-            {
-                
-                con.Open();
 
-                adapter = new SqlDataAdapter();
-                ds = new DataSet();
-                string sql = $"SELECT pID, pName,pSurname,pEmail,pNumber, MAX(pEarningsAmount) AS MaxEarnings\r\nFROM Earnings\r\nGROUP BY  pID, pName,pSurname,pEmail,pNumber\r\nORDER BY MaxEarnings DESC\r\nLIMIT 10;\r\n";
-
-                cmd = new SqlCommand(sql, con);
-
-                adapter.SelectCommand = cmd;
-                adapter.Fill(ds, "ST");
-
-                dataGridView1.DataSource = ds;
-                dataGridView1.DataMember = ("ST");
-
-                con.Close();
-
-
-            }
-            catch (SqlException error)
-            {
-
-                MessageBox.Show(error.Message);
-
-            }
-            */
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -341,162 +78,154 @@ namespace ONESTOPEVENTS
         {
 
         }
-       
+
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            // Determine the query based on the selected radio button
+            string query = GetQueryBasedOnSelection();
+
+            if (query == null)
+            {
+                MessageBox.Show("Please select a report type.");
+                return;
+            }
+
+            // Get the start and end dates from the MonthCalendar controls
+            DateTime startDate = monthCalendar1.SelectionStart;
+            DateTime endDate = monthCalendar2.SelectionStart;
+
+            // Ensure endDate is after startDate
+            if (endDate < startDate)
+            {
+                MessageBox.Show("End date must be on or after the start date.");
+                return;
+            }
+
+            // Generate the report
+            GenerateReport(query, startDate, endDate);
+        }
+
+        private string GetQueryBasedOnSelection()
+        {
             if (radioButton1.Checked)
             {
-                // Get the start and end dates from the MonthCalendar controls
-                DateTime startDate = monthCalendar1.SelectionStart;
-                DateTime endDate = monthCalendar2.SelectionStart;
-
-                // Ensure endDate is after startDate
-                if (endDate < startDate)
-                {
-                    MessageBox.Show("End date must be on or after the start date.");
-                    return;
-                }
-
-                string connectionString = @"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
-                string query = @"
-        SELECT TOP 10 
-            p.Partner_FirstName,
-            p.Partner_SurName,
-            p.Partner_Email,
-            SUM(e.Event_Cost) AS TotalEarnings
-        FROM 
-            EVENTS e
-        INNER JOIN 
-            PARTNERS p ON e.Partner_ID = p.Partner_ID
-        WHERE 
-            e.Event_Date BETWEEN @StartDate AND @EndDate
-        GROUP BY 
-            p.Partner_FirstName,
-            p.Partner_SurName,
-            p.Partner_Email
-        ORDER BY 
-            TotalEarnings DESC;
-    ";
-
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    try
-                    {
-                        con.Open();
-                        SqlCommand cmd = new SqlCommand(query, con);
-                        cmd.Parameters.AddWithValue("@StartDate", startDate);
-                        cmd.Parameters.AddWithValue("@EndDate", endDate);
-
-                        SqlDataAdapter da = new SqlDataAdapter(cmd);
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        dataGridView1.DataSource = dt;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("An error occurred: " + ex.Message);
-                    }
-                }
+                return @"
+            SELECT TOP 10 
+                p.Partner_FirstName,
+                p.Partner_SurName,
+                p.Partner_Email,
+                SUM(e.Event_Cost) AS TotalEarnings
+            FROM 
+                EVENTS e
+            INNER JOIN 
+                PARTNERS p ON e.Partner_ID = p.Partner_ID
+            WHERE 
+                e.Event_Date BETWEEN @StartDate AND @EndDate
+            GROUP BY 
+                p.Partner_FirstName,
+                p.Partner_SurName,
+                p.Partner_Email
+            ORDER BY 
+                TotalEarnings DESC;
+        ";
             }
+            else if (radioButton2.Checked)
+            {
+                return @"
+            SELECT TOP 10 
+                v.Venue_Name,
+                v.Venue_Address,
+                COUNT(e.Event_ID) AS NumberOfEvents
+            FROM 
+                EVENTS e
+            INNER JOIN 
+                VENUES v ON e.Venue_ID = v.Venue_ID
+            WHERE 
+                e.Event_Date BETWEEN @StartDate AND @EndDate
+            GROUP BY 
+                v.Venue_Name,
+                v.Venue_Address
+            ORDER BY 
+                NumberOfEvents DESC;
+        ";
+            }
+            else if (radioButton3.Checked)
+            {
+                return @"
+            SELECT TOP 10 
+                e.Event_Name,
+                e.Event_Description,
+                v.Venue_Name,
+                SUM(e.Event_Cost) AS TotalRevenue
+            FROM 
+                EVENTS e
+            INNER JOIN 
+                VENUES v ON e.Venue_ID = v.Venue_ID
+            WHERE 
+                e.Event_Date BETWEEN @StartDate AND @EndDate
+            GROUP BY 
+                e.Event_Name,
+                e.Event_Description,
+                v.Venue_Name
+            ORDER BY 
+                TotalRevenue DESC;
+        ";
+            }
+            else if (radioButton4.Checked)
+            {
+                return @"
+            SELECT TOP 10 
+                c.Client_FirstName,
+                c.Client_SurName,
+                c.Client_Email,
+                SUM(e.Event_Cost) AS TotalSpent
+            FROM 
+                EVENTS e
+            INNER JOIN 
+                CLIENTS c ON e.Client_ID = c.Client_ID
+            WHERE 
+                e.Event_Date BETWEEN @StartDate AND @EndDate
+            GROUP BY 
+                c.Client_FirstName,
+                c.Client_SurName,
+                c.Client_Email
+            ORDER BY 
+                TotalSpent DESC;
+        ";
+            }
+            return null;
+        }
 
-            if (radioButton2.Checked)
+        private void GenerateReport(string query, DateTime startDate, DateTime endDate)
+        {
+            using (SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;"))
             {
                 try
                 {
-                    using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;"))
-                    {
-                        con.Open();
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@StartDate", startDate);
+                    cmd.Parameters.AddWithValue("@EndDate", endDate);
 
-                        string query = "SELECT VENUE.Venue_ID, VENUE.Venue_Name, COUNT(EVENT.Event_ID) AS EventCount " +
-                                       "FROM VENUE " +
-                                       "JOIN EVENT ON VENUE.Venue_ID = EVENT.Venue_ID " +
-                                       "GROUP BY VENUE.Venue_ID, VENUE.Venue_Name " +
-                                       "ORDER BY EventCount DESC;";
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
-                        using (SqlCommand cmd = new SqlCommand(query, con))
-                        {
-                            using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                            {
-                                DataSet ds = new DataSet();
-                                da.Fill(ds);
-
-                                dataGridView1.DataSource = ds.Tables[0];
-                            }
-                        }
-                    }
+                    ClearDataGridView(); // Clear previous data
+                    dataGridView1.DataSource = dt;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);   
+                    MessageBox.Show("An error occurred: " + ex.Message);
                 }
             }
+        }
 
-            if (radioButton3.Checked)
-            {
-                try
-                {
-                    using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;"))
-                    {
-                        con.Open();
-
-                        string query = "SELECT EVENT.Event_ID, EVENT.Event_Description, COUNT(EVENT_PARTNER.Partner_ID) AS Bookings " +
-                                       "FROM EVENT " +
-                                       "JOIN EVENT_PARTNER ON EVENT.Event_ID = EVENT_PARTNER.Event_ID " +
-                                       "GROUP BY EVENT.Event_ID, EVENT.Event_Description " +
-                                       "ORDER BY Bookings DESC;";
-
-                        using (SqlCommand cmd = new SqlCommand(query, con))
-                        {
-                            using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                            {
-                                DataSet ds = new DataSet();
-                                da.Fill(ds);
-
-                                dataGridView1.DataSource = ds.Tables[0];
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);   
-            
-                }
-            }
-
-            if (radioButton4.Checked)
-            {
-                try
-                {
-                    using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;"))
-                    {
-                        con.Open();
-
-                        string query = "SELECT CLIENT.Client_ID, CLIENT.Client_FirstName, CLIENT.Client_LastName, COUNT(EVENT.Event_ID) AS EventCount " +
-                                       "FROM CLIENT " +
-                                       "JOIN EVENT ON CLIENT.Client_ID = EVENT.Client_ID " +
-                                       "GROUP BY CLIENT.Client_ID, CLIENT.Client_FirstName, CLIENT.Client_LastName " +
-                                       "ORDER BY EventCount DESC " +
-                                       "LIMIT 10;";
-
-                        using (SqlCommand cmd = new SqlCommand(query, con))
-                        {
-                            using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                            {
-                                DataSet ds = new DataSet();
-                                da.Fill(ds);
-
-                                dataGridView1.DataSource = ds.Tables[0];
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);   
-                }
-            }
+        private void ClearDataGridView()
+        {
+            dataGridView1.DataSource = null; // Clears bound data
+            dataGridView1.Rows.Clear();      // Clears rows if not using data source
+            dataGridView1.Columns.Clear();   // Clears columns if needed
         }
 
         private void Reporting_Load(object sender, EventArgs e)
