@@ -214,20 +214,32 @@ namespace Clients_form
             try
             {
                 con.Open();
-                cmd = new SqlCommand("UPDATE CLIENTS SET  = @Client_FirstName, Client_SurName = @Client_SurName, Client_ContactNumber = @Client_ContactNumber, Client_Email = @Client_Email WHERE Client_ID = @Client_ID", con);
+
+                // Correct the SQL UPDATE statement
+                cmd = new SqlCommand("UPDATE CLIENTS SET Client_FirstName = @Client_FirstName, Client_SurName = @Client_SurName, Client_ContactNumber = @Client_ContactNumber, Client_Email = @Client_Email WHERE Client_ID = @Client_ID", con);
+
+                // Add parameters with values
                 cmd.Parameters.AddWithValue("@Client_FirstName", cName);
                 cmd.Parameters.AddWithValue("@Client_SurName", cSurName);
                 cmd.Parameters.AddWithValue("@Client_ContactNumber", cIntNum);
                 cmd.Parameters.AddWithValue("@Client_Email", cEmail);
                 cmd.Parameters.AddWithValue("@Client_ID", cID);
+
+                // Execute the query
                 cmd.ExecuteNonQuery();
+
+                // Close the connection
                 con.Close();
 
                 MessageBox.Show("Client updated successfully");
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("SQL Error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 

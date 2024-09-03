@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\tiaan\\source\\repos\\cmpg223\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{05FBF7BB-3023-481D-8D59-96919734EC43}|ONESTOPEVENTS\\ONESTOPEVENTS.csproj|c:\\users\\tiaan\\source\\repos\\cmpg223\\onestopevents\\eventform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05FBF7BB-3023-481D-8D59-96919734EC43}|ONESTOPEVENTS\\ONESTOPEVENTS.csproj|solutionrelative:onestopevents\\eventform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05FBF7BB-3023-481D-8D59-96919734EC43}|ONESTOPEVENTS\\ONESTOPEVENTS.csproj|c:\\users\\tiaan\\source\\repos\\cmpg223\\onestopevents\\eventform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{05FBF7BB-3023-481D-8D59-96919734EC43}|ONESTOPEVENTS\\ONESTOPEVENTS.csproj|solutionrelative:onestopevents\\eventform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{05FBF7BB-3023-481D-8D59-96919734EC43}|ONESTOPEVENTS\\ONESTOPEVENTS.csproj|c:\\users\\tiaan\\source\\repos\\cmpg223\\onestopevents\\client_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{05FBF7BB-3023-481D-8D59-96919734EC43}|ONESTOPEVENTS\\ONESTOPEVENTS.csproj|solutionrelative:onestopevents\\client_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{05FBF7BB-3023-481D-8D59-96919734EC43}|ONESTOPEVENTS\\ONESTOPEVENTS.csproj|c:\\users\\tiaan\\source\\repos\\cmpg223\\onestopevents\\client_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{05FBF7BB-3023-481D-8D59-96919734EC43}|ONESTOPEVENTS\\ONESTOPEVENTS.csproj|solutionrelative:onestopevents\\client_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05FBF7BB-3023-481D-8D59-96919734EC43}|ONESTOPEVENTS\\ONESTOPEVENTS.csproj|c:\\users\\tiaan\\source\\repos\\cmpg223\\onestopevents\\eventform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05FBF7BB-3023-481D-8D59-96919734EC43}|ONESTOPEVENTS\\ONESTOPEVENTS.csproj|solutionrelative:onestopevents\\eventform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05FBF7BB-3023-481D-8D59-96919734EC43}|ONESTOPEVENTS\\ONESTOPEVENTS.csproj|c:\\users\\tiaan\\source\\repos\\cmpg223\\onestopevents\\eventform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{05FBF7BB-3023-481D-8D59-96919734EC43}|ONESTOPEVENTS\\ONESTOPEVENTS.csproj|solutionrelative:onestopevents\\eventform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{05FBF7BB-3023-481D-8D59-96919734EC43}|ONESTOPEVENTS\\ONESTOPEVENTS.csproj|c:\\users\\tiaan\\source\\repos\\cmpg223\\onestopevents\\venue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -58,17 +58,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "EventForm.cs",
               "DocumentMoniker": "C:\\Users\\tiaan\\source\\repos\\cmpg223\\ONESTOPEVENTS\\EventForm.cs",
               "RelativeDocumentMoniker": "ONESTOPEVENTS\\EventForm.cs",
-              "ToolTip": "C:\\Users\\tiaan\\source\\repos\\cmpg223\\ONESTOPEVENTS\\EventForm.cs*",
-              "RelativeToolTip": "ONESTOPEVENTS\\EventForm.cs*",
-              "ViewState": "AgIAAGcBAAAAAAAAAAAqwDABAAAMAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\tiaan\\source\\repos\\cmpg223\\ONESTOPEVENTS\\EventForm.cs",
+              "RelativeToolTip": "ONESTOPEVENTS\\EventForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-03T21:26:15.662Z",
               "IsPinned": true,
@@ -76,12 +76,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "EventForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\tiaan\\source\\repos\\cmpg223\\ONESTOPEVENTS\\EventForm.cs",
               "RelativeDocumentMoniker": "ONESTOPEVENTS\\EventForm.cs",
-              "ToolTip": "C:\\Users\\tiaan\\source\\repos\\cmpg223\\ONESTOPEVENTS\\EventForm.cs [Design]*",
-              "RelativeToolTip": "ONESTOPEVENTS\\EventForm.cs [Design]*",
+              "ToolTip": "C:\\Users\\tiaan\\source\\repos\\cmpg223\\ONESTOPEVENTS\\EventForm.cs [Design]",
+              "RelativeToolTip": "ONESTOPEVENTS\\EventForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-03T21:26:14.016Z",
               "IsPinned": true,
@@ -89,25 +89,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Client_Form.cs [Design]",
               "DocumentMoniker": "C:\\Users\\tiaan\\source\\repos\\cmpg223\\ONESTOPEVENTS\\Client_Form.cs",
               "RelativeDocumentMoniker": "ONESTOPEVENTS\\Client_Form.cs",
-              "ToolTip": "C:\\Users\\tiaan\\source\\repos\\cmpg223\\ONESTOPEVENTS\\Client_Form.cs [Design]",
-              "RelativeToolTip": "ONESTOPEVENTS\\Client_Form.cs [Design]",
+              "ToolTip": "C:\\Users\\tiaan\\source\\repos\\cmpg223\\ONESTOPEVENTS\\Client_Form.cs [Design]*",
+              "RelativeToolTip": "ONESTOPEVENTS\\Client_Form.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-03T21:26:05.351Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Client_Form.cs",
               "DocumentMoniker": "C:\\Users\\tiaan\\source\\repos\\cmpg223\\ONESTOPEVENTS\\Client_Form.cs",
               "RelativeDocumentMoniker": "ONESTOPEVENTS\\Client_Form.cs",
-              "ToolTip": "C:\\Users\\tiaan\\source\\repos\\cmpg223\\ONESTOPEVENTS\\Client_Form.cs",
-              "RelativeToolTip": "ONESTOPEVENTS\\Client_Form.cs",
-              "ViewState": "AgIAAPYAAAAAAAAAAAAUwAIBAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\tiaan\\source\\repos\\cmpg223\\ONESTOPEVENTS\\Client_Form.cs*",
+              "RelativeToolTip": "ONESTOPEVENTS\\Client_Form.cs*",
+              "ViewState": "AgIAAMgAAAAAAAAAAAAqwNgAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-03T21:26:06.514Z",
               "EditorCaption": ""
