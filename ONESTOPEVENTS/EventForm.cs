@@ -220,7 +220,7 @@ namespace Events_Form
                 txbEventNameBook.BackColor = Color.White;
             }
             // END OF VALIDATION
-            
+
             vID = (int)cbxAddEventVenue.SelectedValue;
             pID = (int)cbxPartnerSelectedBook.SelectedValue;
             cID = (int)cbxClientSelectedBook.SelectedValue;
