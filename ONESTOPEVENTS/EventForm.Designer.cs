@@ -179,6 +179,7 @@
             resources.GetString("cbxUpdateEvent.Items")});
             resources.ApplyResources(this.cbxUpdateEvent, "cbxUpdateEvent");
             this.cbxUpdateEvent.Name = "cbxUpdateEvent";
+            this.cbxUpdateEvent.DropDown += new System.EventHandler(this.cbxUpdateEvent_DropDown);
             this.cbxUpdateEvent.SelectedIndexChanged += new System.EventHandler(this.cbxUpdateEvent_SelectedIndexChanged);
             // 
             // label11
@@ -348,6 +349,7 @@
             resources.GetString("cbxAddEventVenue.Items")});
             resources.ApplyResources(this.cbxAddEventVenue, "cbxAddEventVenue");
             this.cbxAddEventVenue.Name = "cbxAddEventVenue";
+            this.cbxAddEventVenue.DropDown += new System.EventHandler(this.cbxAddEventVenue_DropDown);
             this.cbxAddEventVenue.SelectedIndexChanged += new System.EventHandler(this.cbxAddEventVenue_SelectedIndexChanged);
             // 
             // monthCalendar1
@@ -405,6 +407,7 @@
             resources.GetString("CB_Selected_Event.Items")});
             resources.ApplyResources(this.CB_Selected_Event, "CB_Selected_Event");
             this.CB_Selected_Event.Name = "CB_Selected_Event";
+            this.CB_Selected_Event.DropDown += new System.EventHandler(this.CB_Selected_Event_DropDown);
             this.CB_Selected_Event.SelectedIndexChanged += new System.EventHandler(this.CB_Selected_Event_SelectedIndexChanged);
             // 
             // BtnViewEvent
@@ -456,6 +459,7 @@
             resources.GetString("cbxDeleteEvent.Items")});
             resources.ApplyResources(this.cbxDeleteEvent, "cbxDeleteEvent");
             this.cbxDeleteEvent.Name = "cbxDeleteEvent";
+            this.cbxDeleteEvent.DropDown += new System.EventHandler(this.cbxDeleteEvent_DropDown);
             this.cbxDeleteEvent.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label7

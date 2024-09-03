@@ -23,8 +23,8 @@ namespace Events_Form
         }
 
         // Initialise variables
-        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-        SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader re;
@@ -77,6 +77,9 @@ namespace Events_Form
                 cbxUpdateEvent_Venue.DisplayMember = "Venue";
                 cbxUpdateEvent_Venue.ValueMember = "Venue_ID";
                 cbxUpdateEvent_Venue.DataSource = dt;
+                cbxDeleteEvent.DisplayMember = "Venue";
+                cbxDeleteEvent.ValueMember = "Venue_ID";
+                cbxDeleteEvent.DataSource = dt;
 
                 cmd = new SqlCommand("SELECT Client_ID, (Client_FirstName + ' ' + Client_SurName) AS ClientFullName FROM CLIENTS", con);
                 da = new SqlDataAdapter(cmd);
@@ -475,6 +478,257 @@ namespace Events_Form
         private void btnCancel4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CB_Selected_Event_DropDown(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT Event_ID, Event_Name FROM EVENTS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                cbxUpdateEvent.DisplayMember = "Event_Name";
+                cbxUpdateEvent.ValueMember = "Event_ID";
+                cbxUpdateEvent.DataSource = dt;
+                CB_Selected_Event.DisplayMember = "Event_Name";
+                CB_Selected_Event.ValueMember = "Event_ID";
+                CB_Selected_Event.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT Venue_ID, (Venue_Name + ' (R ' + CAST(Venue_Price AS VARCHAR) + ')') AS Venue FROM VENUES", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxAddEventVenue.DisplayMember = "Venue";
+                cbxAddEventVenue.ValueMember = "Venue_ID";
+                cbxAddEventVenue.DataSource = dt;
+                cbxUpdateEvent_Venue.DisplayMember = "Venue";
+                cbxUpdateEvent_Venue.ValueMember = "Venue_ID";
+                cbxUpdateEvent_Venue.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT Client_ID, (Client_FirstName + ' ' + Client_SurName) AS ClientFullName FROM CLIENTS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxClientSelectedBook.DisplayMember = "ClientFullName";
+                cbxClientSelectedBook.ValueMember = "Client_ID";
+                cbxClientSelectedBook.DataSource = dt;
+                cbxClientSelectedUpdate.DisplayMember = "ClientFullName";
+                cbxClientSelectedUpdate.ValueMember = "Client_ID";
+                cbxClientSelectedUpdate.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT P.Partner_ID, (P.Partner_FirstName + ' ' + P.Partner_SurName + ' (' + PP.Partner_Profession + ')') AS PartnerFullName FROM PARTNERS P INNER JOIN PARTNER_PROFESSIONS PP ON P.Profession_ID = PP.Profession_ID", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxPartnerSelectedUpdate.DisplayMember = "PartnerFullName";
+                cbxPartnerSelectedUpdate.ValueMember = "Partner_ID";
+                cbxPartnerSelectedUpdate.DataSource = dt;
+                cbxPartnerSelectedBook.DisplayMember = "PartnerFullName";
+                cbxPartnerSelectedBook.ValueMember = "Partner_ID";
+                cbxPartnerSelectedBook.DataSource = dt;
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void cbxAddEventVenue_DropDown(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT Event_ID, Event_Name FROM EVENTS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                cbxUpdateEvent.DisplayMember = "Event_Name";
+                cbxUpdateEvent.ValueMember = "Event_ID";
+                cbxUpdateEvent.DataSource = dt;
+                CB_Selected_Event.DisplayMember = "Event_Name";
+                CB_Selected_Event.ValueMember = "Event_ID";
+                CB_Selected_Event.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT Venue_ID, (Venue_Name + ' (R ' + CAST(Venue_Price AS VARCHAR) + ')') AS Venue FROM VENUES", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxAddEventVenue.DisplayMember = "Venue";
+                cbxAddEventVenue.ValueMember = "Venue_ID";
+                cbxAddEventVenue.DataSource = dt;
+                cbxUpdateEvent_Venue.DisplayMember = "Venue";
+                cbxUpdateEvent_Venue.ValueMember = "Venue_ID";
+                cbxUpdateEvent_Venue.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT Client_ID, (Client_FirstName + ' ' + Client_SurName) AS ClientFullName FROM CLIENTS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxClientSelectedBook.DisplayMember = "ClientFullName";
+                cbxClientSelectedBook.ValueMember = "Client_ID";
+                cbxClientSelectedBook.DataSource = dt;
+                cbxClientSelectedUpdate.DisplayMember = "ClientFullName";
+                cbxClientSelectedUpdate.ValueMember = "Client_ID";
+                cbxClientSelectedUpdate.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT P.Partner_ID, (P.Partner_FirstName + ' ' + P.Partner_SurName + ' (' + PP.Partner_Profession + ')') AS PartnerFullName FROM PARTNERS P INNER JOIN PARTNER_PROFESSIONS PP ON P.Profession_ID = PP.Profession_ID", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxPartnerSelectedUpdate.DisplayMember = "PartnerFullName";
+                cbxPartnerSelectedUpdate.ValueMember = "Partner_ID";
+                cbxPartnerSelectedUpdate.DataSource = dt;
+                cbxPartnerSelectedBook.DisplayMember = "PartnerFullName";
+                cbxPartnerSelectedBook.ValueMember = "Partner_ID";
+                cbxPartnerSelectedBook.DataSource = dt;
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void cbxUpdateEvent_DropDown(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT Event_ID, Event_Name FROM EVENTS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                cbxUpdateEvent.DisplayMember = "Event_Name";
+                cbxUpdateEvent.ValueMember = "Event_ID";
+                cbxUpdateEvent.DataSource = dt;
+                CB_Selected_Event.DisplayMember = "Event_Name";
+                CB_Selected_Event.ValueMember = "Event_ID";
+                CB_Selected_Event.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT Venue_ID, (Venue_Name + ' (R ' + CAST(Venue_Price AS VARCHAR) + ')') AS Venue FROM VENUES", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxAddEventVenue.DisplayMember = "Venue";
+                cbxAddEventVenue.ValueMember = "Venue_ID";
+                cbxAddEventVenue.DataSource = dt;
+                cbxUpdateEvent_Venue.DisplayMember = "Venue";
+                cbxUpdateEvent_Venue.ValueMember = "Venue_ID";
+                cbxUpdateEvent_Venue.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT Client_ID, (Client_FirstName + ' ' + Client_SurName) AS ClientFullName FROM CLIENTS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxClientSelectedBook.DisplayMember = "ClientFullName";
+                cbxClientSelectedBook.ValueMember = "Client_ID";
+                cbxClientSelectedBook.DataSource = dt;
+                cbxClientSelectedUpdate.DisplayMember = "ClientFullName";
+                cbxClientSelectedUpdate.ValueMember = "Client_ID";
+                cbxClientSelectedUpdate.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT P.Partner_ID, (P.Partner_FirstName + ' ' + P.Partner_SurName + ' (' + PP.Partner_Profession + ')') AS PartnerFullName FROM PARTNERS P INNER JOIN PARTNER_PROFESSIONS PP ON P.Profession_ID = PP.Profession_ID", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxPartnerSelectedUpdate.DisplayMember = "PartnerFullName";
+                cbxPartnerSelectedUpdate.ValueMember = "Partner_ID";
+                cbxPartnerSelectedUpdate.DataSource = dt;
+                cbxPartnerSelectedBook.DisplayMember = "PartnerFullName";
+                cbxPartnerSelectedBook.ValueMember = "Partner_ID";
+                cbxPartnerSelectedBook.DataSource = dt;
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void cbxDeleteEvent_DropDown(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT Event_ID, Event_Name FROM EVENTS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                cbxUpdateEvent.DisplayMember = "Event_Name";
+                cbxUpdateEvent.ValueMember = "Event_ID";
+                cbxUpdateEvent.DataSource = dt;
+                CB_Selected_Event.DisplayMember = "Event_Name";
+                CB_Selected_Event.ValueMember = "Event_ID";
+                CB_Selected_Event.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT Venue_ID, (Venue_Name + ' (R ' + CAST(Venue_Price AS VARCHAR) + ')') AS Venue FROM VENUES", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxAddEventVenue.DisplayMember = "Venue";
+                cbxAddEventVenue.ValueMember = "Venue_ID";
+                cbxAddEventVenue.DataSource = dt;
+                cbxUpdateEvent_Venue.DisplayMember = "Venue";
+                cbxUpdateEvent_Venue.ValueMember = "Venue_ID";
+                cbxUpdateEvent_Venue.DataSource = dt;
+                cbxDeleteEvent.DisplayMember = "Venue";
+                cbxDeleteEvent.ValueMember = "Venue_ID";
+                cbxDeleteEvent.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT Client_ID, (Client_FirstName + ' ' + Client_SurName) AS ClientFullName FROM CLIENTS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxClientSelectedBook.DisplayMember = "ClientFullName";
+                cbxClientSelectedBook.ValueMember = "Client_ID";
+                cbxClientSelectedBook.DataSource = dt;
+                cbxClientSelectedUpdate.DisplayMember = "ClientFullName";
+                cbxClientSelectedUpdate.ValueMember = "Client_ID";
+                cbxClientSelectedUpdate.DataSource = dt;
+
+                cmd = new SqlCommand("SELECT P.Partner_ID, (P.Partner_FirstName + ' ' + P.Partner_SurName + ' (' + PP.Partner_Profession + ')') AS PartnerFullName FROM PARTNERS P INNER JOIN PARTNER_PROFESSIONS PP ON P.Profession_ID = PP.Profession_ID", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                cbxPartnerSelectedUpdate.DisplayMember = "PartnerFullName";
+                cbxPartnerSelectedUpdate.ValueMember = "Partner_ID";
+                cbxPartnerSelectedUpdate.DataSource = dt;
+                cbxPartnerSelectedBook.DisplayMember = "PartnerFullName";
+                cbxPartnerSelectedBook.ValueMember = "Partner_ID";
+                cbxPartnerSelectedBook.DataSource = dt;
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }
