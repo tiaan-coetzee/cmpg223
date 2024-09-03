@@ -582,6 +582,7 @@
             this.btnCancel1.TabIndex = 3;
             this.btnCancel1.Text = "Cancel";
             this.btnCancel1.UseVisualStyleBackColor = true;
+            this.btnCancel1.Click += new System.EventHandler(this.btnCancel1_Click);
             // 
             // dgvViewPartners
             // 
@@ -623,6 +624,7 @@
             this.BtnViewEvent.TabIndex = 2;
             this.BtnViewEvent.Text = "View";
             this.BtnViewEvent.UseVisualStyleBackColor = true;
+            this.BtnViewEvent.Click += new System.EventHandler(this.BtnViewEvent_Click);
             // 
             // Partner_Form
             // 

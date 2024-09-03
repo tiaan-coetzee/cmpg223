@@ -71,6 +71,9 @@ namespace ONESTOPEVENTS
                 cbxDeleteVenue.DisplayMember = "Venue_Name";
                 cbxDeleteVenue.ValueMember = "Venue_ID";
                 cbxDeleteVenue.DataSource = dt;
+                CB_Selected_Venues.DisplayMember = "Venue_Name";
+                CB_Selected_Venues.ValueMember = "Venue_ID";
+                CB_Selected_Venues.DataSource = dt;
                 con.Close();
             }
             catch (SqlException ex)
@@ -336,6 +339,35 @@ namespace ONESTOPEVENTS
         private void btnCancel1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnViewVenues_Click(object sender, EventArgs e)
+        {
+            vID = (int)CB_Selected_Venues.SelectedValue;
+            try
+            {
+                // Open the connection
+                con.Open();
+
+                // Create the SQL command to retrieve the required client information
+                cmd = new SqlCommand("SELECT Venue_Name, Venue_HasKitchen, Venue_Size, Venue_Description, Venue_Rating, Venue_Price, Venue_Address FROM VENUES WHERE Venue_ID = @Venue_ID", con);
+                cmd.Parameters.AddWithValue("@Venue_ID", vID);
+                // Create a DataAdapter to fill a DataTable with the retrieved data
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // Bind the DataTable to the DataGridView
+                dgvViewPartners.DataSource = dt;
+
+                // Close the connection
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that may occur
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

@@ -59,6 +59,9 @@ namespace ONESTOPEVENTS
                 cbxProfessionDelete.DisplayMember = "Partner_Profession";
                 cbxProfessionDelete.ValueMember = "Profession_ID";
                 cbxProfessionDelete.DataSource = dt;
+                CB_Selected_Profession.DisplayMember = "Partner_Profession";
+                CB_Selected_Profession.ValueMember = "Profession_ID";
+                CB_Selected_Profession.DataSource = dt;
                 con.Close();
             }
             catch (SqlException ex)
@@ -266,6 +269,35 @@ namespace ONESTOPEVENTS
         private void btnCancel1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnViewProfession_Click(object sender, EventArgs e)
+        {
+            profID = (int)CB_Selected_Profession.SelectedValue;
+            try
+            {
+                // Open the connection
+                con.Open();
+
+                // Create the SQL command to retrieve the required client information
+                cmd = new SqlCommand("SELECT Partner_Profession, Partner_Cost  FROM PARTNER_PROFESSIONS WHERE Profession_ID = @Profession_ID", con);
+                cmd.Parameters.AddWithValue("@Profession_ID", profID);
+                // Create a DataAdapter to fill a DataTable with the retrieved data
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // Bind the DataTable to the DataGridView
+                dgvViewProfessions.DataSource = dt;
+
+                // Close the connection
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that may occur
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

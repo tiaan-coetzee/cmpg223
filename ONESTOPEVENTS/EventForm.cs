@@ -23,8 +23,8 @@ namespace Events_Form
         }
 
         // Initialise variables
-        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-        SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader re;
@@ -98,10 +98,10 @@ namespace Events_Form
 
                 // DataTable to the ComboBox
                 cbxPartnerSelectedUpdate.DisplayMember = "PartnerFullName";
-                cbxPartnerSelectedUpdate.ValueMember = "Profession_ID";
+                cbxPartnerSelectedUpdate.ValueMember = "Partner_ID";
                 cbxPartnerSelectedUpdate.DataSource = dt;
                 cbxPartnerSelectedBook.DisplayMember = "PartnerFullName";
-                cbxPartnerSelectedBook.ValueMember = "Profession_ID";
+                cbxPartnerSelectedBook.ValueMember = "Partner_ID";
                 cbxPartnerSelectedBook.DataSource = dt;
                 con.Close();
             }
@@ -139,11 +139,11 @@ namespace Events_Form
 
                 // Create a DataAdapter to fill a DataSet with the retrieved data
                 da = new SqlDataAdapter(cmd);
-                ds = new DataSet();
-                da.Fill(ds);
+                dt = new DataTable();
+                da.Fill(dt);
 
                 // Set the DataGridView's DataSource to the DataTable in the DataSet
-                dgvViewPartner.DataSource = ds.Tables[0];
+                dgvViewPartner.DataSource = dt;
 
                 // Close the connection
                 con.Close();

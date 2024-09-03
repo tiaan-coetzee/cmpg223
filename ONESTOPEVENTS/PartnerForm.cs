@@ -5,7 +5,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -79,11 +81,14 @@ namespace ONESTOPEVENTS
 
                 // DataTable to the ComboBox
                 cbxPartnerUpdate.DisplayMember = "PartnerFullName";
-                cbxPartnerUpdate.ValueMember = "Profession_ID";
+                cbxPartnerUpdate.ValueMember = "Partner_ID";
                 cbxPartnerUpdate.DataSource = dt;
                 cbxPSelectDelete.DisplayMember = "PartnerFullName";
-                cbxPSelectDelete.ValueMember = "Profession_ID";
+                cbxPSelectDelete.ValueMember = "Partner_ID";
                 cbxPSelectDelete.DataSource = dt;
+                CB_Selected_Partner.DisplayMember = "PartnerFullName";
+                CB_Selected_Partner.ValueMember = "Partner_ID";
+                CB_Selected_Partner.DataSource = dt;
                 con.Close();
             }
             catch (SqlException ex)
@@ -412,6 +417,40 @@ namespace ONESTOPEVENTS
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void BtnViewEvent_Click(object sender, EventArgs e)
+        {
+            pID = (int)CB_Selected_Partner.SelectedValue;
+            try
+            {
+                // Open the connection
+                con.Open();
+
+                // Create the SQL command to retrieve the required client information
+                cmd = new SqlCommand("SELECT P.Partner_FirstName, P.Partner_SurName, P.Partner_Email, P.Partner_ContactNumber, PP.Partner_Profession FROM PARTNERS P INNER JOIN PARTNER_PROFESSIONS PP ON P.Profession_ID = PP.Profession_ID WHERE P.Partner_ID = @Partner_ID", con);
+                cmd.Parameters.AddWithValue("@Partner_ID", pID);
+                // Create a DataAdapter to fill a DataTable with the retrieved data
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // Bind the DataTable to the DataGridView
+                dgvViewPartners.DataSource = dt;
+
+                // Close the connection
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that may occur
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void btnCancel1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
