@@ -115,6 +115,7 @@
             this.tabAddProfession.SelectedIndex = 0;
             this.tabAddProfession.Size = new System.Drawing.Size(700, 496);
             this.tabAddProfession.TabIndex = 0;
+            this.tabAddProfession.TabStop = false;
             // 
             // tabPage6
             // 
@@ -137,7 +138,7 @@
             this.btnCancel1.Location = new System.Drawing.Point(464, 387);
             this.btnCancel1.Name = "btnCancel1";
             this.btnCancel1.Size = new System.Drawing.Size(175, 50);
-            this.btnCancel1.TabIndex = 19;
+            this.btnCancel1.TabIndex = 3;
             this.btnCancel1.Text = "Cancel";
             this.btnCancel1.UseVisualStyleBackColor = true;
             this.btnCancel1.Click += new System.EventHandler(this.btnCancel1_Click);
@@ -150,6 +151,7 @@
             this.dgvViewProfessions.RowHeadersWidth = 51;
             this.dgvViewProfessions.Size = new System.Drawing.Size(407, 322);
             this.dgvViewProfessions.TabIndex = 18;
+            this.dgvViewProfessions.TabStop = false;
             // 
             // label9
             // 
@@ -170,7 +172,8 @@
             this.CB_Selected_Profession.Location = new System.Drawing.Point(444, 58);
             this.CB_Selected_Profession.Name = "CB_Selected_Profession";
             this.CB_Selected_Profession.Size = new System.Drawing.Size(234, 27);
-            this.CB_Selected_Profession.TabIndex = 16;
+            this.CB_Selected_Profession.TabIndex = 1;
+            this.CB_Selected_Profession.DropDown += new System.EventHandler(this.CB_Selected_Profession_DropDown);
             // 
             // BtnViewProfession
             // 
@@ -179,7 +182,7 @@
             this.BtnViewProfession.Location = new System.Drawing.Point(33, 387);
             this.BtnViewProfession.Name = "BtnViewProfession";
             this.BtnViewProfession.Size = new System.Drawing.Size(175, 50);
-            this.BtnViewProfession.TabIndex = 15;
+            this.BtnViewProfession.TabIndex = 2;
             this.BtnViewProfession.Text = "View";
             this.BtnViewProfession.UseVisualStyleBackColor = true;
             this.BtnViewProfession.Click += new System.EventHandler(this.BtnViewProfession_Click);

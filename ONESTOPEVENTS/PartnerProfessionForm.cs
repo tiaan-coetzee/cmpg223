@@ -24,8 +24,8 @@ namespace ONESTOPEVENTS
         }
 
         //Declaration of variables
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader re;
@@ -161,7 +161,7 @@ namespace ONESTOPEVENTS
 
             if (profName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(profName, @"^[a-zA-Z]+$"))
             {
-                txtProfessionName.BackColor = Color.Red;
+                txtProfessionNameUpdate.BackColor = Color.Red;
                 MessageBox.Show("Please enter a valid profession name with only letters and more than 1 character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -296,6 +296,28 @@ namespace ONESTOPEVENTS
             catch (Exception ex)
             {
                 // Handle any exceptions that may occur
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void CB_Selected_Profession_DropDown(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT Profession_ID, Partner_Profession FROM PARTNER_PROFESSIONS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBoxxes
+                CB_Selected_Profession.DisplayMember = "Partner_Profession";
+                CB_Selected_Profession.ValueMember = "Profession_ID";
+                CB_Selected_Profession.DataSource = dt;
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
