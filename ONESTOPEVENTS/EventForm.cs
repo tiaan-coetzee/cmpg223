@@ -65,16 +65,16 @@ namespace Events_Form
                 CB_Selected_Event.ValueMember = "Event_ID";
                 CB_Selected_Event.DataSource = dt;
 
-                cmd = new SqlCommand("SELECT Venue_ID, Venue_Name FROM VENUES", con);
+                cmd = new SqlCommand("SELECT Venue_ID, (Venue_Name + ' (R ' + CAST(Venue_Price AS VARCHAR) + ')') AS Venue FROM VENUES", con);
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
 
                 // DataTable to the ComboBox
-                cbxAddEventVenue.DisplayMember = "Venue_Name";
+                cbxAddEventVenue.DisplayMember = "Venue";
                 cbxAddEventVenue.ValueMember = "Venue_ID";
                 cbxAddEventVenue.DataSource = dt;
-                cbxUpdateEvent_Venue.DisplayMember = "Venue_Name";
+                cbxUpdateEvent_Venue.DisplayMember = "Venue";
                 cbxUpdateEvent_Venue.ValueMember = "Venue_ID";
                 cbxUpdateEvent_Venue.DataSource = dt;
 
