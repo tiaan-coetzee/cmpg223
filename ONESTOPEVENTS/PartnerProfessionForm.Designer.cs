@@ -105,7 +105,7 @@
             this.tabAddProfession.Name = "tabAddProfession";
             this.tabAddProfession.SelectedIndex = 0;
             this.tabAddProfession.Size = new System.Drawing.Size(700, 496);
-            this.tabAddProfession.TabIndex = 3;
+            this.tabAddProfession.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -134,7 +134,7 @@
             this.btnExit.Location = new System.Drawing.Point(498, 387);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(175, 50);
-            this.btnExit.TabIndex = 15;
+            this.btnExit.TabIndex = 4;
             this.btnExit.Text = "CANCEL";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -167,7 +167,7 @@
             this.txtProfessionCost.Location = new System.Drawing.Point(436, 81);
             this.txtProfessionCost.Name = "txtProfessionCost";
             this.txtProfessionCost.Size = new System.Drawing.Size(238, 27);
-            this.txtProfessionCost.TabIndex = 12;
+            this.txtProfessionCost.TabIndex = 2;
             // 
             // btnAdd
             // 
@@ -178,7 +178,7 @@
             this.btnAdd.Location = new System.Drawing.Point(34, 387);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(175, 50);
-            this.btnAdd.TabIndex = 14;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -190,7 +190,7 @@
             this.txtProfessionName.Location = new System.Drawing.Point(436, 23);
             this.txtProfessionName.Name = "txtProfessionName";
             this.txtProfessionName.Size = new System.Drawing.Size(238, 27);
-            this.txtProfessionName.TabIndex = 11;
+            this.txtProfessionName.TabIndex = 1;
             // 
             // tabPage4
             // 
@@ -221,7 +221,7 @@
             this.btnClose.Location = new System.Drawing.Point(501, 387);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(175, 50);
-            this.btnClose.TabIndex = 35;
+            this.btnClose.TabIndex = 9;
             this.btnClose.Text = "CANCEL";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.button1_Click);
@@ -255,7 +255,7 @@
             this.btnProfessionUpdate.Location = new System.Drawing.Point(34, 387);
             this.btnProfessionUpdate.Name = "btnProfessionUpdate";
             this.btnProfessionUpdate.Size = new System.Drawing.Size(175, 50);
-            this.btnProfessionUpdate.TabIndex = 34;
+            this.btnProfessionUpdate.TabIndex = 8;
             this.btnProfessionUpdate.Text = "UPDATE";
             this.btnProfessionUpdate.UseVisualStyleBackColor = false;
             this.btnProfessionUpdate.Click += new System.EventHandler(this.btnProfessionUpdate_Click);
@@ -269,7 +269,7 @@
             this.cbxPartnerUpdate.Location = new System.Drawing.Point(436, 23);
             this.cbxPartnerUpdate.Name = "cbxPartnerUpdate";
             this.cbxPartnerUpdate.Size = new System.Drawing.Size(238, 27);
-            this.cbxPartnerUpdate.TabIndex = 28;
+            this.cbxPartnerUpdate.TabIndex = 5;
             this.cbxPartnerUpdate.DropDown += new System.EventHandler(this.cbxPartnerUpdate_DropDown);
             this.cbxPartnerUpdate.SelectedIndexChanged += new System.EventHandler(this.cbxPartnerUpdate_SelectedIndexChanged);
             // 
@@ -280,7 +280,7 @@
             this.txtProfessionCostUpdate.Location = new System.Drawing.Point(436, 139);
             this.txtProfessionCostUpdate.Name = "txtProfessionCostUpdate";
             this.txtProfessionCostUpdate.Size = new System.Drawing.Size(238, 27);
-            this.txtProfessionCostUpdate.TabIndex = 33;
+            this.txtProfessionCostUpdate.TabIndex = 7;
             // 
             // lblProfessionCost
             // 
@@ -299,7 +299,7 @@
             this.txtProfessionNameUpdate.Location = new System.Drawing.Point(436, 81);
             this.txtProfessionNameUpdate.Name = "txtProfessionNameUpdate";
             this.txtProfessionNameUpdate.Size = new System.Drawing.Size(238, 27);
-            this.txtProfessionNameUpdate.TabIndex = 32;
+            this.txtProfessionNameUpdate.TabIndex = 6;
             // 
             // tabPage5
             // 
@@ -333,7 +333,7 @@
             this.cbxProfessionDelete.Location = new System.Drawing.Point(436, 23);
             this.cbxProfessionDelete.Name = "cbxProfessionDelete";
             this.cbxProfessionDelete.Size = new System.Drawing.Size(238, 27);
-            this.cbxProfessionDelete.TabIndex = 28;
+            this.cbxProfessionDelete.TabIndex = 10;
             this.cbxProfessionDelete.DropDown += new System.EventHandler(this.cbxProfessionDelete_DropDown);
             // 
             // BtnDeleteProfession
@@ -345,7 +345,7 @@
             this.BtnDeleteProfession.Location = new System.Drawing.Point(34, 387);
             this.BtnDeleteProfession.Name = "BtnDeleteProfession";
             this.BtnDeleteProfession.Size = new System.Drawing.Size(175, 50);
-            this.BtnDeleteProfession.TabIndex = 29;
+            this.BtnDeleteProfession.TabIndex = 11;
             this.BtnDeleteProfession.Text = "DELETE";
             this.BtnDeleteProfession.UseVisualStyleBackColor = false;
             this.BtnDeleteProfession.Click += new System.EventHandler(this.BtnDeleteProfession_Click);
@@ -360,7 +360,7 @@
             this.btnProfessionDeteteCencel.Location = new System.Drawing.Point(501, 387);
             this.btnProfessionDeteteCencel.Name = "btnProfessionDeteteCencel";
             this.btnProfessionDeteteCencel.Size = new System.Drawing.Size(175, 50);
-            this.btnProfessionDeteteCencel.TabIndex = 30;
+            this.btnProfessionDeteteCencel.TabIndex = 12;
             this.btnProfessionDeteteCencel.Text = "CANCEL";
             this.btnProfessionDeteteCencel.UseVisualStyleBackColor = false;
             this.btnProfessionDeteteCencel.Click += new System.EventHandler(this.btnProfessionDeteteCencel_Click);
