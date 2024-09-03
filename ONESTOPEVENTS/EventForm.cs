@@ -224,9 +224,9 @@ namespace Events_Form
             }
             // END OF VALIDATION
 
-            vID = (int)cbxAddEventVenue.SelectedIndex;
-            pID = (int)cbxPartnerSelectedBook.SelectedIndex;
-            cID = (int)cbxClientSelectedBook.SelectedIndex;
+            vID = (int)cbxAddEventVenue.SelectedValue;
+            pID = (int)cbxPartnerSelectedBook.SelectedValue;
+            cID = (int)cbxClientSelectedBook.SelectedValue;
 
             // Cost Calculation
             try
@@ -349,10 +349,10 @@ namespace Events_Form
             }
             // END OF VALIIDATION
 
-            eID = (int)cbxUpdateEvent.SelectedIndex;
-            vID = (int)cbxUpdateEvent_Venue.SelectedIndex;
-            pID = (int)cbxPartnerSelectedUpdate.SelectedIndex;
-            cID = (int)cbxClientSelectedUpdate.SelectedIndex;
+            eID = (int)cbxUpdateEvent.SelectedValue;
+            vID = (int)cbxUpdateEvent_Venue.SelectedValue;
+            pID = (int)cbxPartnerSelectedUpdate.SelectedValue;
+            cID = (int)cbxClientSelectedUpdate.SelectedValue;
 
             // Cost Calculation
             try
