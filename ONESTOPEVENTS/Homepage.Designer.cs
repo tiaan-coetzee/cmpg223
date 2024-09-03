@@ -72,7 +72,7 @@
             this.panel2.Location = new System.Drawing.Point(5, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(453, 93);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 0;
             // 
             // label7
             // 
@@ -207,7 +207,7 @@
             this.groupBox6.Location = new System.Drawing.Point(52, 379);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(390, 115);
-            this.groupBox6.TabIndex = 8;
+            this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Description";
             // 
@@ -236,6 +236,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Homepage";
             this.Text = "One Stop Events";
+            this.Load += new System.EventHandler(this.Homepage_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
