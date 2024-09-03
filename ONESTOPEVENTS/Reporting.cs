@@ -17,8 +17,8 @@ namespace ONESTOPEVENTS
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader re;
@@ -341,40 +341,62 @@ namespace ONESTOPEVENTS
         {
 
         }
-
+       
         private void button1_Click(object sender, EventArgs e)
         {
+            
             if (radioButton1.Checked)
             {
-                try
+                // Get the start and end dates from the MonthCalendar controls
+                DateTime startDate = monthCalendar1.SelectionStart;
+                DateTime endDate = monthCalendar2.SelectionStart;
+
+                // Ensure endDate is after startDate
+                if (endDate < startDate)
                 {
-                    using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;"))
+                    MessageBox.Show("End date must be on or after the start date.");
+                    return;
+                }
+
+                string connectionString = @"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+                string query = @"
+        SELECT TOP 10 
+            p.Partner_FirstName,
+            p.Partner_SurName,
+            p.Partner_Email,
+            SUM(e.Event_Cost) AS TotalEarnings
+        FROM 
+            EVENTS e
+        INNER JOIN 
+            PARTNERS p ON e.Partner_ID = p.Partner_ID
+        WHERE 
+            e.Event_Date BETWEEN @StartDate AND @EndDate
+        GROUP BY 
+            p.Partner_FirstName,
+            p.Partner_SurName,
+            p.Partner_Email
+        ORDER BY 
+            TotalEarnings DESC;
+    ";
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    try
                     {
                         con.Open();
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        cmd.Parameters.AddWithValue("@StartDate", startDate);
+                        cmd.Parameters.AddWithValue("@EndDate", endDate);
 
-                        string query = "SELECT Partner_FirstName, Partner_LastName, SUM(Event_Cost) AS TotalEarnings " +
-                                       "FROM PARTNER " +
-                                       "JOIN EVENT_PARTNER ON PARTNER.Partner_ID = EVENT_PARTNER.Partner_ID " +
-                                       "JOIN EVENT ON EVENT_PARTNER.Event_ID = EVENT.Event_ID " +
-                                       "GROUP BY Partner_FirstName, Partner_LastName " +
-                                       "ORDER BY TotalEarnings DESC " +
-                                       "LIMIT 1;";
-
-                        using (SqlCommand cmd = new SqlCommand(query, con))
-                        {
-                            using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                            {
-                                DataSet ds = new DataSet();
-                                da.Fill(ds);
-
-                                dataGridView1.DataSource = ds.Tables[0];
-                            }
-                        }
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        dataGridView1.DataSource = dt;
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);          
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred: " + ex.Message);
+                    }
                 }
             }
 
