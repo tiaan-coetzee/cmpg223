@@ -188,7 +188,7 @@ namespace Events_Form
 
             //Validate Event name
             eName = txbEventNameBook.Text.Trim();
-            if (eName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(eName, @"^[a-zA-Z]+$"))
+            if (eName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(eName, @"^[a-zA-Z\s]+$"))
             {
                 txbEventNameBook.BackColor = Color.Red;
                 MessageBox.Show("Please enter a valid event name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -341,7 +341,7 @@ namespace Events_Form
             DateTime eDate = monthCalendar2.SelectionStart;
 
             eName = txbEventNameUpdate.Text.Trim();
-            if (eName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(eName, @"^[a-zA-Z]+$"))
+            if (eName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(eName, @"^[a-zA-Z\s]+$"))
             {
                 txbEventNameUpdate.BackColor = Color.Red;
                 MessageBox.Show("Please enter a valid event name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

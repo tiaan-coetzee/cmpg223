@@ -18,8 +18,8 @@ namespace ONESTOPEVENTS
     public partial class Venue : Form
     {
         //VARIABLES
-        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-        SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader re;
@@ -106,7 +106,7 @@ namespace ONESTOPEVENTS
         {
             // ADD VENUE VALIDATION
             vName = txtADDVENUE_Name.Text.Trim();
-            if (vName.Length == 0 || !System.Text.RegularExpressions.Regex.IsMatch(vName, @"^[a-zA-Z]+$"))
+            if (vName.Length == 0 || !System.Text.RegularExpressions.Regex.IsMatch(vName, @"^[a-zA-Z\s]+$"))
             {
                 txtADDVENUE_Name.BackColor = Color.Red;
                 MessageBox.Show("Please enter a string for venues name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -198,7 +198,7 @@ namespace ONESTOPEVENTS
         {
             // UPDATE BUTTON VALIDATION
             vName = txtUpdateVenue_Name.Text.Trim();
-            if (vName.Length == 0 || !System.Text.RegularExpressions.Regex.IsMatch(vName, @"^[a-zA-Z]+$"))
+            if (vName.Length == 0 || !System.Text.RegularExpressions.Regex.IsMatch(vName, @"^[a-zA-Z\s]+$"))
             {
                 txtUpdateVenue_Name.BackColor = Color.Red;
                 MessageBox.Show("Please enter a string for venues name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -233,8 +233,7 @@ namespace ONESTOPEVENTS
                 rtbUpdateVenue_Address.BackColor = Color.White;
             }
 
-            int tempvar;
-            if (!int.TryParse(txtUpdateVenue_Price.Text, out tempvar))
+            if (!decimal.TryParse(txtUpdateVenue_Price.Text, out vPrice))
             {
                 txtUpdateVenue_Price.BackColor = Color.Red;
                 MessageBox.Show("Please enter a valid price (numbers only).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -245,7 +244,7 @@ namespace ONESTOPEVENTS
                 txtUpdateVenue_Price.BackColor = Color.White;
             }
 
-            if (!int.TryParse(txtUpdateVenue_Size.Text, out tempvar))
+            if (!int.TryParse(txtUpdateVenue_Size.Text, out vSize))
             {
                 txtUpdateVenue_Size.BackColor = Color.Red;
                 MessageBox.Show("Please enter a venue size (numbers only).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -283,7 +282,7 @@ namespace ONESTOPEVENTS
 
         private void BtnDeleteVenue_Click(object sender, EventArgs e)
         {
-            vID = (int)cbxUpdateVenue.SelectedValue;
+            vID = (int)cbxDeleteVenue.SelectedValue;
             try
             {
                 con.Open();
@@ -296,7 +295,7 @@ namespace ONESTOPEVENTS
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Cannot delete, there is an event dependant on this venue");
             }
             finally
             {
@@ -310,7 +309,7 @@ namespace ONESTOPEVENTS
                     catch (Exception ex)
                     {
                         // Log any exception that occurs while closing the connection
-                        MessageBox.Show("Error closing connection: " + ex.Message);
+                        MessageBox.Show("Cannot delete, there is an event dependant on this venue");
                     }
                 }
             }
