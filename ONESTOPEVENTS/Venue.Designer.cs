@@ -131,6 +131,7 @@
             this.dgvViewPartners.RowHeadersWidth = 51;
             this.dgvViewPartners.Size = new System.Drawing.Size(407, 322);
             this.dgvViewPartners.TabIndex = 18;
+            this.dgvViewPartners.TabStop = false;
             // 
             // label9
             // 

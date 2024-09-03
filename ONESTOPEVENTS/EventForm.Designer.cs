@@ -52,6 +52,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cbxPartnerSelectedBook = new System.Windows.Forms.ComboBox();
             this.txbEventNameBook = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -79,7 +80,6 @@
             this.btnCancel4 = new System.Windows.Forms.Button();
             this.cbxDeleteEvent = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbxPartnerSelectedBook = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -268,6 +268,14 @@
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Name = "tabPage2";
             // 
+            // cbxPartnerSelectedBook
+            // 
+            this.cbxPartnerSelectedBook.FormattingEnabled = true;
+            this.cbxPartnerSelectedBook.Items.AddRange(new object[] {
+            resources.GetString("cbxPartnerSelectedBook.Items")});
+            resources.ApplyResources(this.cbxPartnerSelectedBook, "cbxPartnerSelectedBook");
+            this.cbxPartnerSelectedBook.Name = "cbxPartnerSelectedBook";
+            // 
             // txbEventNameBook
             // 
             this.txbEventNameBook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -383,6 +391,7 @@
             this.dgvViewPartner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dgvViewPartner, "dgvViewPartner");
             this.dgvViewPartner.Name = "dgvViewPartner";
+            this.dgvViewPartner.TabStop = false;
             // 
             // label3
             // 
@@ -452,14 +461,6 @@
             // 
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            // 
-            // cbxPartnerSelectedBook
-            // 
-            this.cbxPartnerSelectedBook.FormattingEnabled = true;
-            this.cbxPartnerSelectedBook.Items.AddRange(new object[] {
-            resources.GetString("cbxPartnerSelectedBook.Items")});
-            resources.ApplyResources(this.cbxPartnerSelectedBook, "cbxPartnerSelectedBook");
-            this.cbxPartnerSelectedBook.Name = "cbxPartnerSelectedBook";
             // 
             // EventForm
             // 

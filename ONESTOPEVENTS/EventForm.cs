@@ -23,8 +23,8 @@ namespace Events_Form
         }
 
         // Initialise variables
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
-        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader re;
@@ -182,6 +182,19 @@ namespace Events_Form
                 return;
             }
 
+            //Validate Event name
+            eName = txbEventNameBook.Text.Trim();
+            if (eName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(eName, @"^[a-zA-Z]+$"))
+            {
+                txbEventNameBook.BackColor = Color.Red;
+                MessageBox.Show("Please enter a valid event name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                txbEventNameBook.BackColor = Color.White;
+            }
+
             // Validate Event Description
             eDescription = RTBEventDescription.Text.Trim();
             if (eDescription.Length == 0 || eDescription.Length > 255)
@@ -209,19 +222,6 @@ namespace Events_Form
             }*/
 
             DateTime eDate = monthCalendar1.SelectionStart;
-
-            //Validate Event name
-            eName = txbEventNameBook.Text.Trim();
-            if (eName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(eName, @"^[a-zA-Z]+$"))
-            {
-                txbEventNameBook.BackColor = Color.Red;
-                MessageBox.Show("Please enter a valid event name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
-            {
-                txbEventNameBook.BackColor = Color.White;
-            }
             // END OF VALIDATION
 
             vID = (int)cbxAddEventVenue.SelectedValue;
