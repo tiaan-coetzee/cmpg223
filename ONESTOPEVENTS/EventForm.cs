@@ -304,6 +304,7 @@ namespace Events_Form
                 cmd.Parameters.AddWithValue("@Event_ID", eID);
                 cmd.ExecuteNonQuery();
                 con.Close();
+
                 MessageBox.Show("Event booked successfully!");
             }
             catch (SqlException ex)
