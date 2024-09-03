@@ -88,7 +88,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(703, 473);
-            this.tabControl1.TabIndex = 24;
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -124,6 +124,7 @@
             this.dgvViewPartners.RowHeadersWidth = 51;
             this.dgvViewPartners.Size = new System.Drawing.Size(407, 322);
             this.dgvViewPartners.TabIndex = 23;
+            this.dgvViewPartners.TabStop = false;
             // 
             // label13
             // 
@@ -145,6 +146,7 @@
             this.CB_Selected_Client.Name = "CB_Selected_Client";
             this.CB_Selected_Client.Size = new System.Drawing.Size(234, 21);
             this.CB_Selected_Client.TabIndex = 1;
+            this.CB_Selected_Client.DropDown += new System.EventHandler(this.CB_Selected_Client_DropDown);
             // 
             // BtnViewClients
             // 
@@ -197,7 +199,7 @@
             this.TBClientEmail.Location = new System.Drawing.Point(431, 163);
             this.TBClientEmail.Name = "TBClientEmail";
             this.TBClientEmail.Size = new System.Drawing.Size(238, 27);
-            this.TBClientEmail.TabIndex = 42;
+            this.TBClientEmail.TabIndex = 6;
             // 
             // label3
             // 
@@ -217,7 +219,7 @@
             this.TBClient_ContactNum.Location = new System.Drawing.Point(431, 231);
             this.TBClient_ContactNum.Name = "TBClient_ContactNum";
             this.TBClient_ContactNum.Size = new System.Drawing.Size(238, 27);
-            this.TBClient_ContactNum.TabIndex = 41;
+            this.TBClient_ContactNum.TabIndex = 7;
             // 
             // label4
             // 
@@ -237,7 +239,7 @@
             this.TBClient_Surname.Location = new System.Drawing.Point(431, 95);
             this.TBClient_Surname.Name = "TBClient_Surname";
             this.TBClient_Surname.Size = new System.Drawing.Size(238, 27);
-            this.TBClient_Surname.TabIndex = 40;
+            this.TBClient_Surname.TabIndex = 5;
             // 
             // BAddClient
             // 
@@ -248,7 +250,7 @@
             this.BAddClient.Location = new System.Drawing.Point(26, 387);
             this.BAddClient.Name = "BAddClient";
             this.BAddClient.Size = new System.Drawing.Size(175, 50);
-            this.BAddClient.TabIndex = 33;
+            this.BAddClient.TabIndex = 8;
             this.BAddClient.Text = "ADD";
             this.BAddClient.UseVisualStyleBackColor = false;
             this.BAddClient.Click += new System.EventHandler(this.BAddClient_Click_1);
@@ -263,7 +265,7 @@
             this.BCancel.Location = new System.Drawing.Point(492, 387);
             this.BCancel.Name = "BCancel";
             this.BCancel.Size = new System.Drawing.Size(175, 50);
-            this.BCancel.TabIndex = 34;
+            this.BCancel.TabIndex = 9;
             this.BCancel.Text = "CANCEL";
             this.BCancel.UseVisualStyleBackColor = false;
             this.BCancel.Click += new System.EventHandler(this.BCancel_Click);
@@ -286,7 +288,7 @@
             this.TBClient_name.Location = new System.Drawing.Point(429, 27);
             this.TBClient_name.Name = "TBClient_name";
             this.TBClient_name.Size = new System.Drawing.Size(238, 27);
-            this.TBClient_name.TabIndex = 39;
+            this.TBClient_name.TabIndex = 4;
             // 
             // tabPage2
             // 
@@ -329,7 +331,7 @@
             this.txtUpdateClient_Email.Location = new System.Drawing.Point(431, 225);
             this.txtUpdateClient_Email.Name = "txtUpdateClient_Email";
             this.txtUpdateClient_Email.Size = new System.Drawing.Size(236, 27);
-            this.txtUpdateClient_Email.TabIndex = 50;
+            this.txtUpdateClient_Email.TabIndex = 13;
             // 
             // label10
             // 
@@ -349,7 +351,7 @@
             this.txtUpdateClient_ContactNumber.Location = new System.Drawing.Point(431, 291);
             this.txtUpdateClient_ContactNumber.Name = "txtUpdateClient_ContactNumber";
             this.txtUpdateClient_ContactNumber.Size = new System.Drawing.Size(236, 27);
-            this.txtUpdateClient_ContactNumber.TabIndex = 49;
+            this.txtUpdateClient_ContactNumber.TabIndex = 14;
             // 
             // label11
             // 
@@ -369,7 +371,7 @@
             this.txtUpdateClient_Surname.Location = new System.Drawing.Point(431, 159);
             this.txtUpdateClient_Surname.Name = "txtUpdateClient_Surname";
             this.txtUpdateClient_Surname.Size = new System.Drawing.Size(236, 27);
-            this.txtUpdateClient_Surname.TabIndex = 48;
+            this.txtUpdateClient_Surname.TabIndex = 12;
             // 
             // label12
             // 
@@ -389,18 +391,19 @@
             this.txtUpdateClient_Name.Location = new System.Drawing.Point(429, 93);
             this.txtUpdateClient_Name.Name = "txtUpdateClient_Name";
             this.txtUpdateClient_Name.Size = new System.Drawing.Size(236, 27);
-            this.txtUpdateClient_Name.TabIndex = 47;
+            this.txtUpdateClient_Name.TabIndex = 11;
             // 
             // cbxUpdate_Client
             // 
             this.cbxUpdate_Client.Font = new System.Drawing.Font("Calibri", 12.25F);
             this.cbxUpdate_Client.FormattingEnabled = true;
+            this.cbxUpdate_Client.IntegralHeight = false;
             this.cbxUpdate_Client.Items.AddRange(new object[] {
             "test"});
             this.cbxUpdate_Client.Location = new System.Drawing.Point(431, 27);
             this.cbxUpdate_Client.Name = "cbxUpdate_Client";
             this.cbxUpdate_Client.Size = new System.Drawing.Size(234, 27);
-            this.cbxUpdate_Client.TabIndex = 39;
+            this.cbxUpdate_Client.TabIndex = 10;
             this.cbxUpdate_Client.DropDown += new System.EventHandler(this.cbxUpdate_Client_DropDown);
             this.cbxUpdate_Client.SelectedIndexChanged += new System.EventHandler(this.CBDelete_Client_SelectedIndexChanged);
             // 
@@ -424,7 +427,7 @@
             this.BCancel2.Location = new System.Drawing.Point(492, 387);
             this.BCancel2.Name = "BCancel2";
             this.BCancel2.Size = new System.Drawing.Size(175, 50);
-            this.BCancel2.TabIndex = 37;
+            this.BCancel2.TabIndex = 16;
             this.BCancel2.Text = "CANCEL";
             this.BCancel2.UseVisualStyleBackColor = false;
             this.BCancel2.Click += new System.EventHandler(this.BCancel2_Click);
@@ -438,7 +441,7 @@
             this.btnUpdateClient.Location = new System.Drawing.Point(26, 387);
             this.btnUpdateClient.Name = "btnUpdateClient";
             this.btnUpdateClient.Size = new System.Drawing.Size(175, 50);
-            this.btnUpdateClient.TabIndex = 36;
+            this.btnUpdateClient.TabIndex = 15;
             this.btnUpdateClient.Text = "UPDATE";
             this.btnUpdateClient.UseVisualStyleBackColor = false;
             this.btnUpdateClient.Click += new System.EventHandler(this.BUpdate_Click);
@@ -467,7 +470,7 @@
             this.cbxDeleteClient.Location = new System.Drawing.Point(431, 27);
             this.cbxDeleteClient.Name = "cbxDeleteClient";
             this.cbxDeleteClient.Size = new System.Drawing.Size(234, 27);
-            this.cbxDeleteClient.TabIndex = 43;
+            this.cbxDeleteClient.TabIndex = 17;
             this.cbxDeleteClient.DropDown += new System.EventHandler(this.cbxDeleteClient_DropDown);
             this.cbxDeleteClient.SelectedIndexChanged += new System.EventHandler(this.cbxDeleteClient_SelectedIndexChanged);
             // 
@@ -491,7 +494,7 @@
             this.button1.Location = new System.Drawing.Point(492, 387);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 50);
-            this.button1.TabIndex = 41;
+            this.button1.TabIndex = 19;
             this.button1.Text = "CANCEL";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -505,7 +508,7 @@
             this.btnDeleteClient.Location = new System.Drawing.Point(26, 387);
             this.btnDeleteClient.Name = "btnDeleteClient";
             this.btnDeleteClient.Size = new System.Drawing.Size(175, 50);
-            this.btnDeleteClient.TabIndex = 40;
+            this.btnDeleteClient.TabIndex = 18;
             this.btnDeleteClient.Text = "DELETE";
             this.btnDeleteClient.UseVisualStyleBackColor = false;
             this.btnDeleteClient.Click += new System.EventHandler(this.btnDelete_Click);

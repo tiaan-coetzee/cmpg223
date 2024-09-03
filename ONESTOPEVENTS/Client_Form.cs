@@ -363,5 +363,27 @@ namespace Clients_form
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void CB_Selected_Client_DropDown(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT Client_ID, (Client_FirstName + ' ' + Client_SurName) AS ClientFullName FROM CLIENTS", con);
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                // DataTable to the ComboBox
+                CB_Selected_Client.DisplayMember = "ClientFullName";
+                CB_Selected_Client.ValueMember = "Client_ID";
+                CB_Selected_Client.DataSource = dt;
+                con.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }
