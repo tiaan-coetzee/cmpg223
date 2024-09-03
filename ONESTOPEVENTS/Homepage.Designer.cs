@@ -91,7 +91,7 @@
             this.groupBox1.Location = new System.Drawing.Point(52, 121);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(185, 80);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Maintain venues";
             // 
@@ -100,7 +100,7 @@
             this.button1.Location = new System.Drawing.Point(5, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 50);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Venues";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -113,7 +113,7 @@
             this.groupBox2.Location = new System.Drawing.Point(52, 293);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(390, 80);
-            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Maintain partners";
             // 
@@ -122,7 +122,7 @@
             this.button4.Location = new System.Drawing.Point(210, 20);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(175, 50);
-            this.button4.TabIndex = 8;
+            this.button4.TabIndex = 6;
             this.button4.Text = "Partner Profession";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -132,7 +132,7 @@
             this.button3.Location = new System.Drawing.Point(6, 20);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(175, 50);
-            this.button3.TabIndex = 7;
+            this.button3.TabIndex = 5;
             this.button3.Text = "Partners";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -144,7 +144,7 @@
             this.groupBox3.Location = new System.Drawing.Point(257, 121);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(185, 80);
-            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Reports";
             // 
@@ -153,7 +153,7 @@
             this.button2.Location = new System.Drawing.Point(5, 20);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(175, 50);
-            this.button2.TabIndex = 9;
+            this.button2.TabIndex = 2;
             this.button2.Text = "Request Reports";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -165,7 +165,7 @@
             this.groupBox4.Location = new System.Drawing.Point(52, 207);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(185, 80);
-            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Maintain events";
             // 
@@ -174,7 +174,7 @@
             this.button5.Location = new System.Drawing.Point(5, 20);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(175, 50);
-            this.button5.TabIndex = 5;
+            this.button5.TabIndex = 3;
             this.button5.Text = "Events";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -186,7 +186,7 @@
             this.groupBox5.Location = new System.Drawing.Point(257, 207);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(185, 80);
-            this.groupBox5.TabIndex = 7;
+            this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Maintain clients";
             // 
@@ -195,7 +195,7 @@
             this.button6.Location = new System.Drawing.Point(5, 20);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(175, 50);
-            this.button6.TabIndex = 5;
+            this.button6.TabIndex = 4;
             this.button6.Text = "Clients";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
