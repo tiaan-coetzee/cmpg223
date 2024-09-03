@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace Events_Form
@@ -21,6 +22,7 @@ namespace Events_Form
 
         // Initialise variables
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader re;
@@ -118,7 +120,7 @@ namespace Events_Form
             }
             //END OF VALIDATION
 
-            dgvViewEvents.DataSource = null;
+            dgvViewPartner.DataSource = null;
             eID = (int)CB_Selected_Event.SelectedValue;
             try
             {
@@ -135,7 +137,7 @@ namespace Events_Form
                 da.Fill(ds);
 
                 // Set the DataGridView's DataSource to the DataTable in the DataSet
-                dgvViewEvents.DataSource = ds.Tables[0];
+                dgvViewPartner.DataSource = ds.Tables[0];
 
                 // Close the connection
                 con.Close();

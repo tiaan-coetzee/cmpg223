@@ -33,9 +33,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.txbEventCostUpdate = new System.Windows.Forms.TextBox();
             this.txbEventNameUpdate = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cbxPartnerSelectedUpdate = new System.Windows.Forms.ComboBox();
@@ -54,9 +52,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.txbEventCostBook = new System.Windows.Forms.TextBox();
             this.txbEventNameBook = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -73,7 +69,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnCancel1 = new System.Windows.Forms.Button();
-            this.dgvViewEvents = new System.Windows.Forms.DataGridView();
+            this.dgvViewPartner = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.CB_Selected_Event = new System.Windows.Forms.ComboBox();
             this.BtnViewEvent = new System.Windows.Forms.Button();
@@ -89,7 +85,7 @@
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewEvents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewPartner)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
@@ -117,9 +113,7 @@
             // tabPage3
             // 
             this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPage3.Controls.Add(this.txbEventCostUpdate);
             this.tabPage3.Controls.Add(this.txbEventNameUpdate);
-            this.tabPage3.Controls.Add(this.label19);
             this.tabPage3.Controls.Add(this.label20);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.cbxPartnerSelectedUpdate);
@@ -141,22 +135,11 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // txbEventCostUpdate
-            // 
-            this.txbEventCostUpdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.txbEventCostUpdate, "txbEventCostUpdate");
-            this.txbEventCostUpdate.Name = "txbEventCostUpdate";
-            // 
             // txbEventNameUpdate
             // 
             this.txbEventNameUpdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txbEventNameUpdate, "txbEventNameUpdate");
             this.txbEventNameUpdate.Name = "txbEventNameUpdate";
-            // 
-            // label19
-            // 
-            resources.ApplyResources(this.label19, "label19");
-            this.label19.Name = "label19";
             // 
             // label20
             // 
@@ -268,9 +251,7 @@
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage2.Controls.Add(this.cbxPartnerSelectedBook);
-            this.tabPage2.Controls.Add(this.txbEventCostBook);
             this.tabPage2.Controls.Add(this.txbEventNameBook);
-            this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label8);
@@ -287,22 +268,11 @@
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Name = "tabPage2";
             // 
-            // txbEventCostBook
-            // 
-            this.txbEventCostBook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.txbEventCostBook, "txbEventCostBook");
-            this.txbEventCostBook.Name = "txbEventCostBook";
-            // 
             // txbEventNameBook
             // 
             this.txbEventNameBook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txbEventNameBook, "txbEventNameBook");
             this.txbEventNameBook.Name = "txbEventNameBook";
-            // 
-            // label18
-            // 
-            resources.ApplyResources(this.label18, "label18");
-            this.label18.Name = "label18";
             // 
             // label17
             // 
@@ -394,7 +364,7 @@
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage1.Controls.Add(this.btnCancel1);
-            this.tabPage1.Controls.Add(this.dgvViewEvents);
+            this.tabPage1.Controls.Add(this.dgvViewPartner);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.CB_Selected_Event);
             this.tabPage1.Controls.Add(this.BtnViewEvent);
@@ -408,11 +378,11 @@
             this.btnCancel1.UseVisualStyleBackColor = true;
             this.btnCancel1.Click += new System.EventHandler(this.btnCancel1_Click);
             // 
-            // dgvViewEvents
+            // dgvViewPartner
             // 
-            this.dgvViewEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dgvViewEvents, "dgvViewEvents");
-            this.dgvViewEvents.Name = "dgvViewEvents";
+            this.dgvViewPartner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dgvViewPartner, "dgvViewPartner");
+            this.dgvViewPartner.Name = "dgvViewPartner";
             // 
             // label3
             // 
@@ -509,7 +479,7 @@
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvViewEvents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViewPartner)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
@@ -542,7 +512,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnCancel1;
-        private System.Windows.Forms.DataGridView dgvViewEvents;
+        private System.Windows.Forms.DataGridView dgvViewPartner;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox CB_Selected_Event;
         private System.Windows.Forms.Button BtnViewEvent;
@@ -565,12 +535,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbxClientSelectedBook;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txbEventCostBook;
         private System.Windows.Forms.TextBox txbEventNameBook;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txbEventCostUpdate;
         private System.Windows.Forms.TextBox txbEventNameUpdate;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cbxPartnerSelectedBook;
     }
