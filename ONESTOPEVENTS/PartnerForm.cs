@@ -398,6 +398,9 @@ namespace ONESTOPEVENTS
                 cbxPSelectDelete.DisplayMember = "PartnerFullName";
                 cbxPSelectDelete.ValueMember = "Partner_ID";
                 cbxPSelectDelete.DataSource = dt;
+                CB_Selected_Partner.DisplayMember = "PartnerFullName";
+                CB_Selected_Partner.ValueMember = "Partner_ID";
+                CB_Selected_Partner.DataSource = dt;
                 con.Close();
             }
             catch (SqlException ex)
@@ -498,6 +501,9 @@ namespace ONESTOPEVENTS
                 cbxPSelectDelete.DisplayMember = "PartnerFullName";
                 cbxPSelectDelete.ValueMember = "Partner_ID";
                 cbxPSelectDelete.DataSource = dt;
+                CB_Selected_Partner.DisplayMember = "PartnerFullName";
+                CB_Selected_Partner.ValueMember = "Partner_ID";
+                CB_Selected_Partner.DataSource = dt;
                 con.Close();
             }
             catch (SqlException ex)
