@@ -18,7 +18,7 @@ namespace ONESTOPEVENTS
     public partial class Venue : Form
     {
         //VARIABLES
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;Initial Catalog=OnestopEvents;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-8Q3DTNR\SQLEXPRESS;initial catalog=OnestopEvents;trusted_connection=true");
         //SqlConnection con = new SqlConnection(@"Data Source=Tiaan;Initial Catalog=test1;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;");
         SqlCommand cmd;
         SqlDataAdapter da;
