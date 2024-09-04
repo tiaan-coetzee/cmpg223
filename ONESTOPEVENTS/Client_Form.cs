@@ -83,7 +83,7 @@ namespace Clients_form
         {
             // DATA VALIDATION ADD BUTTON
             cName = TBClient_name.Text.Trim();
-            if (cName.Length == 0 || !System.Text.RegularExpressions.Regex.IsMatch(cName, @"^[a-zA-Z]+$"))
+            if (cName.Length == 0 || !System.Text.RegularExpressions.Regex.IsMatch(cName, @"^[a-zA-Z\s]+$"))
             {
                 TBClient_name.BackColor = Color.Red;
                 MessageBox.Show("Please enter a string for Client Name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -95,7 +95,7 @@ namespace Clients_form
             }
 
             cSurName = TBClient_Surname.Text.Trim();
-            if (cSurName.Length == 0 || !System.Text.RegularExpressions.Regex.IsMatch(cSurName, @"^[a-zA-Z]+$"))
+            if (cSurName.Length == 0 || !System.Text.RegularExpressions.Regex.IsMatch(cSurName, @"^[a-zA-Z\s]+$"))
             {
                 TBClient_Surname.BackColor = Color.Red;
                 MessageBox.Show("Please enter a string for Client Surname.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -160,7 +160,7 @@ namespace Clients_form
         {
             // UPDATE CLIENT BUTTON DATA VALIDATION
             cName = txtUpdateClient_Name.Text.Trim();
-            if (cName.Length == 0 || !System.Text.RegularExpressions.Regex.IsMatch(cName, @"^[a-zA-Z]+$"))
+            if (cName.Length == 0 || !System.Text.RegularExpressions.Regex.IsMatch(cName, @"^[a-zA-Z\s]+$"))
             {
                 txtUpdateClient_Name.BackColor = Color.Red;
                 MessageBox.Show("Please enter a string for client name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -173,7 +173,7 @@ namespace Clients_form
 
 
             cSurName = txtUpdateClient_Surname.Text.Trim();
-            if (cSurName.Length == 0 || !System.Text.RegularExpressions.Regex.IsMatch(cSurName, @"^[a-zA-Z]+$"))
+            if (cSurName.Length == 0 || !System.Text.RegularExpressions.Regex.IsMatch(cSurName, @"^[a-zA-Z\s]+$"))
             {
                 txtUpdateClient_Surname.BackColor = Color.Red;
                 MessageBox.Show("Please enter a string for client surname.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

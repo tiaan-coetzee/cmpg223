@@ -96,7 +96,7 @@ namespace ONESTOPEVENTS
         {
             profName = txtProfessionName.Text.Trim();
 
-            if (profName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(profName, @"^[a-zA-Z]+$"))
+            if (profName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(profName, @"^[a-zA-Z\s]+$"))
             {
                 txtProfessionName.BackColor = Color.Red;
                 MessageBox.Show("Please enter a valid profession name with only letters and more than 1 character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -159,7 +159,7 @@ namespace ONESTOPEVENTS
         {
             profName = txtProfessionNameUpdate.Text.Trim();
 
-            if (profName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(profName, @"^[a-zA-Z]+$"))
+            if (profName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(profName, @"^[a-zA-Z\s]+$"))
             {
                 txtProfessionNameUpdate.BackColor = Color.Red;
                 MessageBox.Show("Please enter a valid profession name with only letters and more than 1 character.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

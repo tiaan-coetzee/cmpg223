@@ -122,7 +122,7 @@ namespace ONESTOPEVENTS
         {
             //Validate Partner name
             pName = txtPartnerName.Text.Trim();
-            if (pName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(pName, @"^[a-zA-Z]+$"))
+            if (pName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(pName, @"^[a-zA-Z\s]+$"))
             {
                 txtPartnerName.BackColor = Color.Red;
                 MessageBox.Show("Please enter a valid partner name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -135,7 +135,7 @@ namespace ONESTOPEVENTS
 
             //Validate partner surname
             pSurName = txtPartnerSurname.Text.Trim();
-            if (pSurName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(pSurName, @"^[a-zA-Z]+$"))
+            if (pSurName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(pSurName, @"^[a-zA-Z\s]+$"))
             {
                 txtPartnerSurname.BackColor = Color.Red;
                 MessageBox.Show("Please enter a valid partner surname.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -236,7 +236,7 @@ namespace ONESTOPEVENTS
         {
             // Update Button Validation
             pName = txtPNameUpdate.Text.Trim();
-            if (pName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(pName, @"^[a-zA-Z]+$"))
+            if (pName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(pName, @"^[a-zA-Z\s]+$"))
             {
                 txtPNameUpdate.BackColor = Color.Red;
                 MessageBox.Show("Please enter a valid partner name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -249,7 +249,7 @@ namespace ONESTOPEVENTS
 
             //Validate partner surname
             pSurName = txtPSurnameUpdate.Text.Trim();
-            if (pSurName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(pSurName, @"^[a-zA-Z]+$"))
+            if (pSurName.Length <= 1 || !System.Text.RegularExpressions.Regex.IsMatch(pSurName, @"^[a-zA-Z\s]+$"))
             {
                 txtPSurnameUpdate.BackColor = Color.Red;
                 MessageBox.Show("Please enter a valid partner surname.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
