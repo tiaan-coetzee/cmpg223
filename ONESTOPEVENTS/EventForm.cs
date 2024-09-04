@@ -245,7 +245,7 @@ namespace Events_Form
                 {
                     if (reader.Read())
                     {
-                        vRating = reader.GetDecimal(reader.GetOrdinal("Venue_Rating"));
+                        //vRating = reader.GetDecimal(reader.GetOrdinal("Venue_Rating"));
                         vPrice = reader.GetDecimal(reader.GetOrdinal("Venue_Price"));
                     }
                 }
@@ -261,7 +261,7 @@ namespace Events_Form
                     }
                 }
 
-                ePrice = (BaseFee * (1 + vRating) + pCost + vPrice) * 1.15M;
+                ePrice = (BaseFee + pCost + vPrice) * 1.15M;
                 lblDispCost.Text = ePrice.ToString("C");
                 lblDispCost.Visible = true;
             }
@@ -371,7 +371,7 @@ namespace Events_Form
                 {
                     if (reader.Read())
                     {
-                        vRating = reader.GetDecimal(reader.GetOrdinal("Venue_Rating"));
+                        //vRating = reader.GetDecimal(reader.GetOrdinal("Venue_Rating"));
                         vPrice = reader.GetDecimal(reader.GetOrdinal("Venue_Price"));
                     }
                 }
@@ -387,7 +387,7 @@ namespace Events_Form
                     }
                 }
 
-                ePrice = (BaseFee * (1 + vRating) + pCost + vPrice) * 1.15M;
+                ePrice = (BaseFee + pCost + vPrice) * 1.15M;
                 LBLDisp2.Text = ePrice.ToString("C");
                 LBLDisp2.Visible = true;
             }
