@@ -620,7 +620,9 @@
             this.ClientSize = new System.Drawing.Size(746, 627);
             this.Controls.Add(this.tabPartners);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "Venue";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venues";
             this.Load += new System.EventHandler(this.Venue_Load);
             this.tabPartners.ResumeLayout(false);

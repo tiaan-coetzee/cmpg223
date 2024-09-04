@@ -639,7 +639,9 @@
             this.ClientSize = new System.Drawing.Size(746, 627);
             this.Controls.Add(this.tabPartners);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "Partner_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADD_Partner_Form";
             this.Load += new System.EventHandler(this.Partner_Form_Load);
             this.panel1.ResumeLayout(false);

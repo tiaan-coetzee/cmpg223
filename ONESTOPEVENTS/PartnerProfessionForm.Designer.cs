@@ -486,7 +486,9 @@
             this.Controls.Add(this.tabAddProfession);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "PartnerProfessionForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Partner Professions";
             this.Load += new System.EventHandler(this.PartnerProfessionForm_Load);
             this.tabControl1.ResumeLayout(false);

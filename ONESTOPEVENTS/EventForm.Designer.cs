@@ -475,6 +475,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "EventForm";
             this.Load += new System.EventHandler(this.Events_Form_Load);
             this.panel1.ResumeLayout(false);
